@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PetMauiApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PetMauiApp"
+    xmlns:Pages="clr-namespace:PetMauiApp.Pages"
+    Shell.TabBarBackgroundColor="{StaticResource PassColor}"
+    Shell.TabBarForegroundColor="{StaticResource BtnTextColor}"
+    Shell.TabBarUnselectedColor="{StaticResource groundcolor}"
+    Shell.TabBarTitleColor="{StaticResource BtnTextColor}"
+    Title="PetMauiApp">
+  
+      
+    <TabBar>
+        <Tab  Title="Home" Icon="home.png">
+            <ShellContent
+               ContentTemplate="{DataTemplate Pages:Get_Started}" Route="Dashboard"/>
+        </Tab>
+        <Tab  Title="Discover" Icon="compass.png">
+            <ShellContent
+               ContentTemplate="{DataTemplate Pages:VetPage}"    />
+        </Tab>
+        <Tab  Title="Explore" Icon="location.png">
+            <ShellContent
+                  ContentTemplate="{DataTemplate Pages:PetMapPage}"/>
+        </Tab>
+        <Tab  Title="Manage" Icon="project_management.png" >
+            <ShellContent
+                ContentTemplate="{DataTemplate Pages:PetFood}"/>
+        </Tab>
+        <Tab  Title="Profile" Icon="cone.png" >
+            <ShellContent
+         ContentTemplate="{DataTemplate Pages:Profile}"/>
+        </Tab>
+    </TabBar>
+  
+</Shell>

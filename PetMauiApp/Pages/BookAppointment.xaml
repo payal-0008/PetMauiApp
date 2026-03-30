@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.BookAppointment"
+             xmlns:calendar="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="BookAppointment">
+    <Grid RowDefinitions="Auto, *">
+
+        <Grid HeightRequest="100" BackgroundColor="{StaticResource PassColor}">
+
+            <Label Text="Dr. Nambuvan" 
+                   TextColor="{StaticResource BtnTextColor}" 
+                   FontSize="20" 
+                   FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1" Margin="20,20,20,0">
+            <VerticalStackLayout Spacing="20">
+
+                <Label Text="Choose a Date" FontSize="22" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                <calendar:SfCalendar
+                   View="Month"
+                   HeightRequest="350">
+
+                 
+                    <calendar:SfCalendar.HeaderView>
+                        <calendar:CalendarHeaderView
+                              TextStyle="{calendar:CalendarTextStyle 
+                              TextColor={StaticResource PassColor}, 
+                             FontSize=18, 
+                             FontAttributes=Bold}"/>
+                    </calendar:SfCalendar.HeaderView>
+
+                    <calendar:SfCalendar.MonthView>
+                        <calendar:CalendarMonthView>
+                            <calendar:CalendarMonthView.WeekNumberStyle>
+                                <calendar:CalendarWeekNumberStyle
+                                 Background="White"
+                                  TextStyle="{calendar:CalendarTextStyle 
+                                    TextColor=Black, 
+                                    FontAttributes=Bold, 
+                                    FontSize=14}"/>
+                            </calendar:CalendarMonthView.WeekNumberStyle>
+                            <calendar:CalendarMonthView.TodayTextStyle>
+                                <calendar:CalendarTextStyle
+                                 TextColor="#222222"
+                                 FontSize="15"/>
+                            </calendar:CalendarMonthView.TodayTextStyle>
+                            <calendar:CalendarMonthView.SelectionTextStyle>
+                                <calendar:CalendarTextStyle
+                                 TextColor="White"
+                                 FontSize="15"
+                                 FontAttributes="Bold"/>
+                            </calendar:CalendarMonthView.SelectionTextStyle>
+                        </calendar:CalendarMonthView>
+                    </calendar:SfCalendar.MonthView>
+                    <calendar:SfCalendar.SelectionBackground>
+                        <SolidColorBrush Color="{StaticResource PassColor}"/>
+                    </calendar:SfCalendar.SelectionBackground>
+                    <calendar:SfCalendar.TodayHighlightBrush>
+                        <SolidColorBrush Color="{StaticResource PassColor}"/>
+                    </calendar:SfCalendar.TodayHighlightBrush>
+                </calendar:SfCalendar>
+                <Label Text="Pick a Time" FontSize="22" FontAttributes="Bold" TextColor="{StaticResource TextColor}" Margin="0,10,0,0"/>
+
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="15" RowSpacing="15">
+                    <Button Text="9:30" Grid.Row="0" Grid.Column="0" BackgroundColor="{StaticResource BtnTextColor}" TextColor="{StaticResource TextColor}" CornerRadius="10" BorderWidth="1" BorderColor="{StaticResource BtnTextColor}"/>
+                    <Button Text="10:30" Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource BtnTextColor}" TextColor="{StaticResource TextColor}" CornerRadius="10" BorderWidth="1" BorderColor="{StaticResource BtnTextColor}"/>
+                    <Button Text="11:30" Grid.Row="1" Grid.Column="0" BackgroundColor="{StaticResource PassColor}" TextColor="White" CornerRadius="10"/>
+                    <Button Text="3:30" Grid.Row="1" Grid.Column="1" BackgroundColor="{StaticResource BtnTextColor}" TextColor="{StaticResource TextColor}" CornerRadius="10" BorderWidth="1" BorderColor="{StaticResource BtnTextColor}"/>
+                    <Button Text="4:30" Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource BtnTextColor}" TextColor="{StaticResource TextColor}" CornerRadius="10" BorderWidth="1" BorderColor="{StaticResource BtnTextColor}"/>
+                    <Button Text="5:30" Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource BtnTextColor}" TextColor="{StaticResource TextColor}" CornerRadius="10" BorderWidth="1" BorderColor="{StaticResource BtnTextColor}"/>
+                </Grid>
+
+                <Button Text="Book an Appointment" 
+                        BackgroundColor="{StaticResource PassColor}" 
+                        TextColor="{StaticResource BtnTextColor}" 
+                        CornerRadius="10" 
+                        HeightRequest="60" 
+                        FontSize="18" 
+                        FontAttributes="Bold"
+                        Margin="0,20,0,40"
+                        ImageSource="calendar_check_white.png"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

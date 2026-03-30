@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.PetFood"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="PetFood">
+    <Grid RowDefinitions="60, *">
+        <Grid BackgroundColor="{StaticResource PassColor}" Padding="15,0">
+          
+            <Label Text="Shop" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontAttributes="Bold" FontSize="18"/>
+            <Image Source="cart_white.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="btn_store"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="15" Spacing="15">
+
+                <Border StrokeShape="RoundRectangle 12" StrokeThickness="0" BackgroundColor="{StaticResource EntryColor}" HeightRequest="50" Padding="15,0">
+                    <Grid ColumnDefinitions="Auto, *">
+                        <Label Text="🔍" VerticalOptions="Center" TextColor="{StaticResource TitleColor}"/>
+                        <Entry Grid.Column="1" Placeholder="Search keywords.." Margin="10,0" VerticalOptions="Center"/>
+                    </Grid>
+                </Border>
+                <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                    <VerticalStackLayout Spacing="5">
+                        <Frame x:Name="FoodFrame" BackgroundColor="{StaticResource PassColor}" CornerRadius="15" Padding="15" HasShadow="False">
+                            <Image Source="vet_food.png" WidthRequest="30" HeightRequest="30"/>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="Food" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Label Text="Food" HorizontalTextAlignment="Center" FontSize="11" TextColor="{StaticResource TitleColor}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5" >
+                        <Frame x:Name="VetFrame" BackgroundColor="{StaticResource EntryColor}" CornerRadius="15" Padding="15" HasShadow="False">
+                            <Image Source="vet_paw.png" WidthRequest="30" HeightRequest="30"/>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="Vet Items" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Label Text="Vet Items" HorizontalTextAlignment="Center" FontSize="11" TextColor="{StaticResource TitleColor}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5" >
+                        <Frame x:Name="AccFrame" BackgroundColor="{StaticResource EntryColor}" CornerRadius="15" Padding="15" HasShadow="False">
+                            <Image Source="pet_collar.png" WidthRequest="30" HeightRequest="30"/>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="Accessories" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Label Text="Accessories" HorizontalTextAlignment="Center" FontSize="11" TextColor="{StaticResource TitleColor}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5" >
+                        <Frame x:Name="IotFrame" BackgroundColor="{StaticResource EntryColor}" CornerRadius="15" Padding="15" HasShadow="False">
+                            <Image Source="iot_devices.png" WidthRequest="30" HeightRequest="30"/>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="IOT Devices" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Label Text="IOT Devices" HorizontalTextAlignment="Center" FontSize="11" TextColor="{StaticResource TitleColor}"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <Grid ColumnDefinitions="*, Auto">
+                    <Label x:Name="RecommendedTitle" Text="Recommended Food" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                    <Button Grid.Column="1" Text="Check Retail Stores" BackgroundColor="{StaticResource PassColor}" FontSize="10" CornerRadius="15"
+                            HeightRequest="20" Clicked="Retail_Store"/>
+                </Grid>
+
+                <CollectionView ItemsSource="{Binding RecommendedProducts}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame  BackgroundColor="{StaticResource BtnTextColor}" CornerRadius="15" Padding="10" BorderColor="{StaticResource EntryColor}">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnProductSelected" CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="{Binding Tag}" BackgroundColor="{Binding TagColor}" TextColor="Brown" FontSize="10" HorizontalOptions="Start" Padding="8,2" TranslationY="-5"/>
+                                    <Image Source="{Binding Image}" HeightRequest="120" Aspect="AspectFit"/>
+                                    <Label Text="{Binding Price}" TextColor="{StaticResource PassColor}" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="14"/>
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="13" MaxLines="1" TextColor="{StaticResource TextColor}"/>
+                                    <Label Text="{Binding Weight}" TextColor="{StaticResource TitleColor}" HorizontalTextAlignment="Center" FontSize="11"/>
+                                    <Button Text="Add to cart" ImageSource="right.png" BorderColor="{StaticResource EntryColor}" BorderWidth="1" 
+                                            BackgroundColor="{StaticResource EntColor}" 
+                                            TextColor="{StaticResource TextColor}" 
+                                            FontSize="10" HeightRequest="35" Clicked="btn_store"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label x:Name="TopSellingTitle" Text="Top Selling" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource TextColor}" Margin="0,10,0,0"/>
+                <CollectionView ItemsSource="{Binding TopSellingProducts}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="15" BackgroundColor="{StaticResource BtnTextColor}" BorderColor="{StaticResource EntryColor}" Margin="0,5" Padding="10">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnProductSelected" CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+                                <Grid ColumnDefinitions="80, *, Auto">
+                                    <Image Source="{Binding Image}" HeightRequest="60"/>
+                                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Margin="10,0">
+                                        <Label Text="{Binding Brand}" FontSize="11" TextColor="{StaticResource PassColor}"/>
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource TextColor}"/>
+                                        <Label Text="{Binding Weight}" FontSize="11" TextColor="{StaticResource TitleColor}"/>
+                                    </VerticalStackLayout>
+                                    <Image Grid.Column="2" Source="right.png"  WidthRequest="45" HeightRequest="30">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="btn_store"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.PetMapPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="PetMapPage">
+   
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource PassColor}" HeightRequest="70" Padding="0,40,0,0">
+            <Label Grid.Column="0" Text="Track Your Pet" TextColor="{StaticResource BtnTextColor}"  
+                   HeightRequest="70" 
+                   FontAttributes="Bold" 
+                   FontSize="18" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Image Source="remap.png" Aspect="AspectFill" />
+
+            <VerticalStackLayout VerticalOptions="End" Margin="0,0,0,20">
+                <Grid >
+                    <Frame Margin="20,80,20,30" CornerRadius="25" HasShadow="True" Padding="20,20,20,40" 
+                           BackgroundColor="{StaticResource BtnTextColor}" Opacity="0.85">
+                        <VerticalStackLayout Spacing="10">
+                            <Grid ColumnDefinitions="*,Auto">
+                                <Label Text="Bella - Border Collie" FontAttributes="Bold" FontSize="18"  TextColor="{StaticResource TextColor}"/>
+                                <Border BackgroundColor="#E88BA0" StrokeShape="RoundRectangle 10" Padding="8,4" HorizontalOptions="End">
+                                    <Label Text="♀" TextColor="{StaticResource BtnTextColor}" FontSize="14" FontAttributes="Bold"/>
+                                </Border>
+                            </Grid>
+
+                            <Label Text="📍 1.2 km away from you" FontSize="13" TextColor="{StaticResource TitleColor}" />
+
+                            <Grid ColumnDefinitions="Auto,Auto,Auto,*,Auto" ColumnSpacing="8">
+                                <Border Grid.Column="0"  StrokeShape="RoundRectangle 10" HeightRequest="40" WidthRequest="40">
+                                    <Label Text="❤" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}"/>
+                                </Border>
+                                <Border Grid.Column="1" StrokeShape="RoundRectangle 10" HeightRequest="40" WidthRequest="40">
+                                    <Label Text="🚗" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}"/>
+                                </Border>
+                                <Border Grid.Column="2"  StrokeShape="RoundRectangle 10" HeightRequest="40" WidthRequest="40">
+                                    <Label Text="🎮" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}"/>
+                                </Border>
+                                <Button Grid.Column="4" Text="See More" BackgroundColor="{StaticResource PassColor}" TextColor="{StaticResource BtnTextColor}" CornerRadius="10" Padding="15,0" HeightRequest="40"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Border HeightRequest="80" WidthRequest="80" StrokeShape="RoundRectangle 40"  
+                             StrokeThickness="4" Stroke="{StaticResource BtnTextColor}" HorizontalOptions="Center" VerticalOptions="Start">
+                        <Image Source="dog1.png" Aspect="AspectFill" />
+                    </Border>
+                </Grid>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

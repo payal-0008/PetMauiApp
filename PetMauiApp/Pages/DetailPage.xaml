@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.DetailPage"
+             Shell.NavBarIsVisible="False"
+             Title="DetailPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="{StaticResource BtnTextColor}">
+            <Border StrokeShape="RoundRectangle 20" StrokeThickness="0" BackgroundColor="#F5F5F5" HeightRequest="300">
+                <Image Source="{Binding Image}" Aspect="AspectFit" Margin="20"/>
+            </Border>
+
+            <HorizontalStackLayout Spacing="10">
+                <Border BackgroundColor="{Binding TagColor}" Padding="10,4" StrokeShape="RoundRectangle 8">
+                    <Label Text="{Binding Tag}" TextColor="Brown" FontSize="12"/>
+                </Border>
+                <Label Text="{Binding Brand}" TextColor="{StaticResource PassColor}" VerticalOptions="Center" FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+
+            <Label Text="{Binding Name}" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+            <Label Text="{Binding Weight}" TextColor="{StaticResource TitleColor}" FontSize="16"/>
+
+            <Label Text="{Binding Price}" FontSize="22" TextColor="{StaticResource PassColor}" FontAttributes="Bold"/>
+
+            <Label Text="Description" FontSize="18" FontAttributes="Bold" Margin="0,10,0,0"/>
+            <Label Text="This high-quality product is specially selected for your pet's needs. It ensures proper nutrition and care as recommended by experts." 
+                   TextColor="Gray" LineHeight="1.2"/>
+
+            <Button Text="Add to Cart" BackgroundColor="{StaticResource PassColor}" 
+                    TextColor="White" CornerRadius="25" HeightRequest="55" Margin="0,20" Clicked="Btn_add"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

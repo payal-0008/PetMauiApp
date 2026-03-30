@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.AboutPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="AboutPage">
+    <Grid RowDefinitions="Auto, *">
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource PassColor}" HeightRequest="60" Padding="15,0">
+            <ImageButton Source="back_white.png" HorizontalOptions="Start" HeightRequest="20" VerticalOptions="Center" Clicked="OnBackClicked"/>
+            <Label Text="About Developer" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontAttributes="Bold" FontSize="18"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="25" Spacing="20">
+
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <Border HeightRequest="120" WidthRequest="120" StrokeShape="RoundRectangle 60" StrokeThickness="4" Stroke="{StaticResource PassColor}">
+                        <Image Source="payal.jpeg" Aspect="AspectFill"/>
+                    </Border>
+                    <Label Text="Payal Aggarwal" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+                    <Label Text="Software Developer" FontSize="16" TextColor="{StaticResource PassColor}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+
+                <Border StrokeShape="RoundRectangle 15" BackgroundColor="{StaticResource EntryColor}" Padding="20" StrokeThickness="0">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Who I Am" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                        <Label Text="I am a passionate developer dedicated to creating high-quality mobile experiences. I specialize in .NET MAUI, C#, and XAML to build cross-platform apps that are both functional and beautiful." 
+                               TextColor="{StaticResource TitleColor}" LineHeight="1.2"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Tech Stack" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource TextColor}" Margin="0,10,0,0"/>
+                <FlexLayout Wrap="Wrap" Direction="Row" JustifyContent="Start" AlignItems="Center" HorizontalOptions="Fill">
+                    <Border Margin="5" Padding="12,5" StrokeShape="RoundRectangle 20" BackgroundColor="{StaticResource groundcolor}" StrokeThickness="0">
+                        <Label Text=".NET MAUI" TextColor="{StaticResource BarColor}" FontSize="13" FontAttributes="Bold"/>
+                    </Border>
+                    <Border Margin="5" Padding="12,5" StrokeShape="RoundRectangle 20" BackgroundColor="{StaticResource groundcolor}" StrokeThickness="0">
+                        <Label Text="C# &amp; XAML" TextColor="#1565C0" FontSize="13" FontAttributes="Bold"/>
+                    </Border>
+                    <Border Margin="5" Padding="12,5" StrokeShape="RoundRectangle 20" BackgroundColor="{StaticResource groundcolor}" StrokeThickness="0">
+                        <Label Text="MVVM Architecture" TextColor="#EF6C00" FontSize="13" FontAttributes="Bold"/>
+                    </Border>
+                    <Border Margin="5" Padding="12,5" StrokeShape="RoundRectangle 20" BackgroundColor="{StaticResource groundcolor}" StrokeThickness="0">
+                        <Label Text="UI/UX Design" TextColor="#7B1FA2" FontSize="13" FontAttributes="Bold"/>
+                    </Border>
+                </FlexLayout>
+
+                <Label Text="Current Project" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource TextColor}" Margin="0,10,0,0"/>
+                <Border StrokeShape="RoundRectangle 15" BackgroundColor="{StaticResource PassColor}" Padding="20" StrokeThickness="0">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="PetMauiApp" TextColor="{StaticResource BtnTextColor}" FontSize="18" FontAttributes="Bold"/>
+                        <Label Text="An all-in-one pet care solution featuring veterinary tracking, supply management, and smart device integration." 
+                               TextColor="{StaticResource BtnTextColor}" Opacity="0.9" FontSize="14"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Button Text="Let's Connect" 
+                        BackgroundColor="{StaticResource PassColor}" 
+                        TextColor="{StaticResource BtnTextColor}" 
+                        CornerRadius="25" 
+                        HeightRequest="50" 
+                        Margin="0,20,0,0"
+                        Clicked="OnConnectClicked"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

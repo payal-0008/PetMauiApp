@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.CartPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="CartPage">
+    <Grid RowDefinitions="60, *, Auto">
+        <Grid BackgroundColor="{StaticResource PassColor}" Padding="15,0">
+            <Label Text="Cart" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontAttributes="Bold" FontSize="18"/>
+        </Grid>
+
+        <CollectionView Grid.Row="1" x:Name="CartListView" Margin="10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete" BackgroundColor="{StaticResource BarColor1}" Invoked="OnDeleteSwipe"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <Frame Margin="10,15,10,5" BackgroundColor="{StaticResource BtnTextColor}" CornerRadius="15" BorderColor="{StaticResource EntryColor}">
+                            <Grid ColumnDefinitions="80, *, 40">
+                                <Image Source="{Binding Image}" HeightRequest="60" Aspect="AspectFit"/>
+                                <VerticalStackLayout Grid.Column="1" Margin="15,0" VerticalOptions="Center">
+                                    <Label Text="{Binding TotalPriceDisplay}" TextColor="{StaticResource PassColor}" FontSize="12" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Text="{Binding Weight}" FontSize="12" TextColor="Gray"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
+                                    <Button Text="+" Clicked="OnIncrease" BackgroundColor="{StaticResource EntColor}" TextColor="{StaticResource PassColor}" FontSize="20" Padding="0"/>
+                                    <Label Text="{Binding Quantity}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                    <Button Text="—" Clicked="OnDecrease" BackgroundColor="{StaticResource EntColor}" TextColor="{StaticResource PassColor}" FontSize="15" Padding="0"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <VerticalStackLayout Grid.Row="2" Padding="20" BackgroundColor="{StaticResource BtnTextColor}" Spacing="10">
+            <Grid ColumnDefinitions="*, Auto">
+                <Label Text="Subtotal" TextColor="{StaticResource TitleColor}"/>
+                <Label Grid.Column="1" x:Name="SubtotalLabel" FontAttributes="Bold"/>
+            </Grid>
+            <Grid ColumnDefinitions="*, Auto">
+                <Label Text="Shipping charges" TextColor="{StaticResource TitleColor}"/>
+                <Label Grid.Column="1" Text="Rs 520.00" FontAttributes="Bold"/>
+            </Grid>
+            <BoxView HeightRequest="1" Color="{StaticResource EntryColor}"/>
+            <Grid ColumnDefinitions="*, Auto">
+                <Label Text="Total" FontSize="20" FontAttributes="Bold"/>
+                <Label Grid.Column="1" x:Name="TotalLabel" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+            </Grid>
+            <Button Text="Checkout" BackgroundColor="{StaticResource PassColor}" CornerRadius="15" HeightRequest="55" Margin="0,10,0,0" Clicked="Btn_Checked"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.MyAddressPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}">
+    <Grid RowDefinitions="Auto, *">
+    <Grid Grid.Row="0" BackgroundColor="{StaticResource PassColor}" HeightRequest="60" Padding="15,0">
+        <ImageButton Source="back_white.png" HorizontalOptions="Start" HeightRequest="20" VerticalOptions="Center" Clicked="OnBackClicked"/>
+        <Label Text="Add Delivery Address" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontAttributes="Bold" FontSize="18"/>
+    </Grid>
+
+    <ScrollView Grid.Row="1">
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Contact Details" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+            <Border StrokeShape="RoundRectangle 10" BackgroundColor="{StaticResource EntryColor}" StrokeThickness="0" HeightRequest="50">
+                <Entry Placeholder="Full Name*" Margin="15,0" VerticalOptions="Center"/>
+            </Border>
+                <Border StrokeShape="RoundRectangle 10" BackgroundColor="{StaticResource EntryColor}" StrokeThickness="0" HeightRequest="50">
+                <Entry Placeholder="Mobile Number*" Keyboard="Telephone" Margin="15,0" VerticalOptions="Center"/>
+            </Border>
+
+            <Label Text="Address" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}" Margin="0,10,0,0"/>
+                <Border StrokeShape="RoundRectangle 10" BackgroundColor="{StaticResource EntryColor}" StrokeThickness="0" HeightRequest="50">
+                <Entry Placeholder="Pincode*" Keyboard="Numeric" Margin="15,0" VerticalOptions="Center"/>
+            </Border>
+                <Border StrokeShape="RoundRectangle 10" BackgroundColor="{StaticResource EntryColor}" StrokeThickness="0" HeightRequest="50">
+                <Entry Placeholder="House No., Building Name*" Margin="15,0" VerticalOptions="Center"/>
+            </Border>
+                <Border StrokeShape="RoundRectangle 10" BackgroundColor="{StaticResource EntryColor}" StrokeThickness="0" HeightRequest="50">
+                <Entry Placeholder="Road name, Area, Colony*" Margin="15,0" VerticalOptions="Center"/>
+            </Border>
+
+            <Label Text="Address Type" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource TextColor}" Margin="0,10,0,0"/>
+            <HorizontalStackLayout Spacing="15">
+                    <Button Text="Home" ContentLayout="Left,10" BackgroundColor="{StaticResource BgColor}" TextColor="{StaticResource txtcolor}" WidthRequest="120" CornerRadius="10"/>
+                    <Button Text="Work"  ContentLayout="Left,10" BackgroundColor="{StaticResource EntryColor}" TextColor="{StaticResource TitleColor}" WidthRequest="120" CornerRadius="10"/>
+            </HorizontalStackLayout>
+
+            <Button Text="SAVE ADDRESS" 
+                        BackgroundColor="{StaticResource PassColor}" 
+                        TextColor="{StaticResource BtnTextColor}" 
+                        FontAttributes="Bold" 
+                        CornerRadius="15" 
+                        HeightRequest="55" 
+                        Margin="0,30,0,0"
+                        Clicked="OnSaveAddressClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.Profile"
+             Shell.NavBarIsVisible="False"
+             Shell.BackgroundColor="{StaticResource BtnTextColor}"
+             Title="Profile">
+
+    <Grid RowDefinitions="Auto, *">
+
+        <Grid BackgroundColor="{StaticResource PassColor}" HeightRequest="60" Padding="15,0">
+            <Grid ColumnDefinitions="Auto, *, Auto">
+                <ImageButton Source="back_white.png" HeightRequest="25" WidthRequest="25" 
+                             BackgroundColor="Transparent" Clicked="OnBackTapped" />
+
+                <Label Text="Pixel Posse" Grid.Column="1" HorizontalOptions="Center" 
+                       VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontSize="18" FontAttributes="Bold"/>
+
+                <Frame Grid.Column="2" HeightRequest="40" WidthRequest="40" CornerRadius="10" 
+                       Padding="0" IsClippedToBounds="True" HasShadow="False">
+                    <Image Source="dog1.png" Aspect="AspectFill"/>
+                </Frame>
+            </Grid>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout BackgroundColor="{StaticResource BtnTextColor}">
+
+                    <Image Source="profile.jpg" Aspect="AspectFill" VerticalOptions="Start" HeightRequest="300"/>
+
+                <Frame CornerRadius="20" Margin="20,30,20,20" BackgroundColor="{StaticResource BtnTextColor}" HasShadow="True">
+                    <VerticalStackLayout Spacing="12">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label Text="Pixel Posse" FontSize="22" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                            <HorizontalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                                <Label Text="Sign out" TextColor="{StaticResource BarColor1}" FontSize="13" VerticalOptions="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnLogout"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
+                        </Grid>
+
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="email.png" HeightRequest="16"/>
+                            <Label Text="pixelposse@gmail.com" FontSize="14" TextColor="{StaticResource TitleColor}"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="phone_icon.png" HeightRequest="16"/>
+                            <Label Text="0758519048" FontSize="14" TextColor="{StaticResource TitleColor}"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame CornerRadius="20" Margin="20,10,20,30" Padding="10" BackgroundColor="{StaticResource BtnTextColor}" HasShadow="True">
+                    <VerticalStackLayout>
+
+                        <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btn_about"/>
+                            </Grid.GestureRecognizers>
+                            <Image Source="fpic.png" HeightRequest="20"/>
+                            <Label Text="About me" Grid.Column="1" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                            <Image Source="right_arrow.png" Grid.Column="2" HeightRequest="15"/>
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>
+
+                        <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btn_cart"/>
+                            </Grid.GestureRecognizers>
+                            <Image Source="right.png" HeightRequest="20"/>
+                            <Label Text="My Orders" Grid.Column="1" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                            <Image Source="right_arrow.png" Grid.Column="2" HeightRequest="15"/>
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>
+
+                        <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btn_address"/>
+                            </Grid.GestureRecognizers>
+                            <Image Source="location.png" HeightRequest="20"/>
+                            <Label Text="My Address" Grid.Column="1" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                            <Image Source="right_arrow.png" Grid.Column="2" HeightRequest="15"/>
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>
+
+                        <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
+                            <Image Source="paw.png" HeightRequest="20"/>
+                            <Label Text="Add Pet" Grid.Column="1" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                            <Image Source="right_arrow.png" Grid.Column="2" HeightRequest="15"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="add_pet"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>
+
+                        <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
+                            <Image Source="iot_devices.png" HeightRequest="20"/>
+                            <Label Text="Add Device" Grid.Column="1" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                            <Image Source="right_arrow.png" Grid.Column="2" HeightRequest="15"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="add_next"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

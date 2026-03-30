@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.AddReview"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="AddReview">
+    <Grid RowDefinitions="Auto, *">
+        <Grid HeightRequest="60" BackgroundColor="{StaticResource PassColor}">
+            <HorizontalStackLayout VerticalOptions="Center" Margin="20,0" Spacing="20">
+
+                <Label Text="Reviews" TextColor="{StaticResource BtnTextColor}" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <ImageButton Source="plus_icon.png" HorizontalOptions="End" Margin="0,0,5,0" WidthRequest="15" Padding="10"  Clicked="OnImageButtonClicked"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="25">
+
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label Text="4.5" FontSize="48" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="{StaticResource TextColor}"/>
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="2">
+                        <Label Text="⭐⭐⭐⭐⭐" FontSize="20"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Based on 89 reviews" TextColor="{StaticResource TitleColor}" HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+
+                <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="10" ColumnSpacing="10">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Excellent" VerticalOptions="Center" FontSize="12" TextColor="{StaticResource TitleColor}"/>
+                    <ProgressBar Grid.Row="0" Grid.Column="1" Progress="0.9" ProgressColor="{StaticResource PassColor}" VerticalOptions="Center"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Good" VerticalOptions="Center" FontSize="12" TextColor="{StaticResource TitleColor}"/>
+                    <ProgressBar Grid.Row="1" Grid.Column="1" Progress="0.7" ProgressColor="{StaticResource  BarColor}" VerticalOptions="Center"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="Average" VerticalOptions="Center" FontSize="12" TextColor="{StaticResource TitleColor}"/>
+                    <ProgressBar Grid.Row="2" Grid.Column="1" Progress="0.5" ProgressColor="#D4E157" VerticalOptions="Center"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" Text="Below Average" VerticalOptions="Center" FontSize="12" TextColor="{StaticResource TitleColor}"/>
+                    <ProgressBar Grid.Row="3" Grid.Column="1" Progress="0.2" ProgressColor="#FFD54F" VerticalOptions="Center"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" Text="Poor" VerticalOptions="Center" FontSize="12" TextColor="{StaticResource TitleColor}"/>
+                    <ProgressBar Grid.Row="4" Grid.Column="1" Progress="0.1" ProgressColor="{StaticResource BarColor1}" VerticalOptions="Center"/>
+                </Grid>
+
+                <VerticalStackLayout Spacing="15">
+                    <Frame CornerRadius="15" HasShadow="True" Padding="15" BorderColor="{StaticResource TitleColor}">
+                        <VerticalStackLayout Spacing="10">
+                            <HorizontalStackLayout Spacing="10">
+                                <Image Source="haylie_avatar.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFill">
+                                    <Image.Clip>
+                                        <EllipseGeometry Center="25,25" RadiusX="25" RadiusY="25"/>
+                                    </Image.Clip>
+                                </Image>
+                                <VerticalStackLayout>
+                                    <Label Text="Haylie Aminoff" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                                    <Label Text="Just now" FontSize="12" TextColor="{StaticResource TitleColor}"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <BoxView HeightRequest="0.2" BackgroundColor="{StaticResource TitleColor}"/>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="4.5" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                                <Label Text="⭐⭐⭐⭐⭐" FontSize="12"/>
+                            </HorizontalStackLayout>
+                            <Label Text="The thing I like best about COCO is the amount of time it has saved while trying to manage my three pets." 
+                                   TextColor="{StaticResource TitleColor}" FontSize="14"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                </VerticalStackLayout>
+                <VerticalStackLayout Spacing="15">
+                    <Frame CornerRadius="15" HasShadow="True" Padding="15"  BorderColor="{StaticResource TitleColor}">
+                        <VerticalStackLayout Spacing="10">
+                            <HorizontalStackLayout Spacing="10">
+                                <Image Source="carla.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFill">
+                                    <Image.Clip>
+                                        <EllipseGeometry Center="25,25" RadiusX="25" RadiusY="25"/>
+                                    </Image.Clip>
+                                </Image>
+                                <VerticalStackLayout>
+                                    <Label Text="Carla Septimus" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                                    <Label Text="32 minutes ago" FontSize="12" TextColor="{StaticResource TitleColor}"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                            <BoxView HeightRequest="0.2" BackgroundColor="{StaticResource TitleColor}"/>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="4.5" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                                <Label Text="⭐⭐⭐⭐⭐" FontSize="12"/>
+                            </HorizontalStackLayout>
+                            <Label Text="Lorem ipsum dolor sit amet, consetetur sadi sspacing elitr, sed diam nonumy" 
+                   TextColor="{StaticResource TitleColor}" FontSize="14"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout Spacing="15">
+                <Frame CornerRadius="15" HasShadow="True" Padding="15" BorderColor="{StaticResource TitleColor}">
+                    <VerticalStackLayout Spacing="10">
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="george.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFill">
+                                <Image.Clip>
+                                    <EllipseGeometry Center="25,25" RadiusX="25" RadiusY="25"/>
+                                </Image.Clip>
+                            </Image>
+                            <VerticalStackLayout>
+                                <Label Text="Carla George" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                                <Label Text="2 days" FontSize="12" TextColor="{StaticResource TitleColor}"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                            <BoxView HeightRequest="0.2" BackgroundColor="{StaticResource TitleColor}"/>
+                            <HorizontalStackLayout Spacing="5">
+                            <Label Text="4.5" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                            <Label Text="⭐⭐⭐⭐⭐" FontSize="12"/>
+                        </HorizontalStackLayout>
+                        <Label Text="Lorem ipsum dolor sit amet, consetetur sadi sspacing elitr, sed diam nonumy" 
+                   TextColor="{StaticResource TitleColor}" FontSize="14"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

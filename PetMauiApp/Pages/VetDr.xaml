@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.VetDr"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="VetDr">
+   
+        <Grid RowDefinitions="*, Auto">
+            <ScrollView Grid.Row="0">
+                <Grid RowDefinitions="350, Auto, Auto">
+
+                    <Image Grid.Row="0"
+                       Source="dr.png" 
+                       Margin="0,60,0,0"
+                       Aspect="AspectFill" 
+                       HeightRequest="350"
+                       VerticalOptions="Start"/>
+
+                <Grid Grid.Row="0" HeightRequest="60" VerticalOptions="Start" BackgroundColor="{StaticResource PassColor}">
+                    <Label Text="Dr. Nambuvan" TextColor="{StaticResource BtnTextColor}" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" Margin="20,0,0,0"/>
+                </Grid>
+
+                    <Frame Grid.Row="1" 
+                       Margin="20,70,20,0" 
+                       CornerRadius="30" 
+                       Padding="25" 
+                       HasShadow="True" 
+                       BackgroundColor="{StaticResource BtnTextColor}"
+                       BorderColor="{StaticResource BtnTextColor}">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Dr. Nambuvan" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                        <Label Text="Bachelor of Veterinary Science" FontSize="16" TextColor="{StaticResource TitleColor}"/>
+
+                            <HorizontalStackLayout Spacing="5" Margin="0,5">
+                                <Label Text="5.0" FontAttributes="Bold" VerticalOptions="Center" TextColor="{StaticResource TextColor}"/>
+                                <Label Text="⭐⭐⭐⭐⭐" FontSize="14" VerticalOptions="Center"/>
+                                <Label Text="(100 reviews)" TextColor="{StaticResource TitleColor}" VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+
+                            <Grid ColumnDefinitions="*, *" RowSpacing="10">
+                                <HorizontalStackLayout Grid.Column="0" Spacing="5">
+                                    <Image Source="clock_icon.png" WidthRequest="15"/>
+                                    <Label Text="Mon - Fri 8:00am - 5:00pm" FontSize="11" TextColor="{StaticResource TitleColor}"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Grid.Column="1" Spacing="5" HorizontalOptions="End">
+                                    <Image Source="location_pin.png" WidthRequest="15"/>
+                                    <Label Text="2.5 km" FontSize="11" TextColor="{StaticResource TitleColor}"/>
+                                </HorizontalStackLayout>
+                            </Grid>
+
+                            <Label Text="1000 LKR for an Appointment" TextColor="{StaticResource PassColor}" FontAttributes="Bold" Margin="0,10,0,0"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <VerticalStackLayout Grid.Row="2" Padding="25,15,25,25" Spacing="15">
+                        <Label Text="Dr. Shehan, one of the most skilled and experienced veterinarians and the owner of the most convenient animal clinic 'Petz &amp; Vetz'. Our paradise is situated in the heart of the town with a pleasant environment. We are ready to treat your beloved doggos &amp; puppers with love and involvement. Book the appointment now!" 
+                           LineHeight="1.2"
+                           TextColor="{StaticResource TitleColor}"/>
+
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="Recommended For:" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                            <Frame CornerRadius="15" Padding="15,5" BorderColor="{StaticResource PassColor}" BackgroundColor="{StaticResource EntColor}" HasShadow="False">
+                                <Label Text="Bella" TextColor="{StaticResource PassColor}"/>
+                            </Frame>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Grid>
+            </ScrollView>
+
+        <Button  
+            Text="Book an Appointment" 
+            ImageSource="calendar_check_white.png" 
+            ContentLayout="Right, 20"
+            Grid.Row="1"
+            BackgroundColor="{StaticResource PassColor}" 
+            TextColor="{StaticResource BtnTextColor}" 
+            CornerRadius="10" 
+            HeightRequest="60" 
+            FontSize="18" 
+            FontAttributes="Bold"
+            Margin="20,10,20,20"
+            Clicked="Book"/>
+        </Grid>
+    </ContentPage>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.ForgetPass"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="ForgetPass">
+    <VerticalStackLayout>
+        <Grid RowDefinitions="Auto,Auto,Auto,auto" Padding="20">
+
+                <Image Source="pet"
+                       Grid.Column="0"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       VerticalOptions="Center"
+                      />
+
+            <Grid Grid.Row="1"
+                  Padding="20,0,20,20">
+
+                <Label
+                    Text="Forget Password"
+                    TextColor="{StaticResource TextColor}"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="25"/>
+            </Grid>
+
+           
+            <Grid Grid.Row="2"
+                  RowDefinitions="Auto,Auto,auto,auto"
+                  Padding="25,20,25,0"
+                  RowSpacing="0">
+             
+                <Label Text="Enter you'r Email"
+                       Grid.Row="0"
+                         TextColor="{StaticResource TextColor}"/>
+
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="*,Auto">
+                  
+                    <Entry Grid.Column="0"
+                           Placeholder="Example@gmail.com"
+                           FontSize="16"
+                           BackgroundColor="{StaticResource EntColor}"/>
+
+
+                    <Button Grid.Column="1"
+                            Text="Get OTP?"
+                            FontSize="14"
+                            TextColor="{StaticResource TextColor}"
+                            CornerRadius="15"
+                            BackgroundColor="{StaticResource PassColor}"
+                            Padding="10,0,10,0"
+                            VerticalOptions="Center"/>
+
+                </Grid>
+
+                <Label
+                    Text="Verification Code"
+                    Grid.Row="2"
+                    Margin="0,20,0,0"
+                     TextColor="{StaticResource TextColor}"/>
+
+                <Entry  
+                    Placeholder="Enter Verification Code"
+                    Grid.Row="3"
+                    Keyboard="Email"
+                    FontSize="16"
+                    BackgroundColor="{StaticResource EntColor}"
+                    />
+
+
+            </Grid>
+
+            <Button Grid.Row="3"
+                    Text="Verify"
+                    TextColor="{StaticResource TextColor}"
+                    BackgroundColor="{StaticResource PassColor}"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    CornerRadius="30"
+                    HeightRequest="60"
+                    WidthRequest="150"
+                    HorizontalOptions="Center"
+                    Margin="0,50,0,0" >
+                <Button.Shadow>
+                    <Shadow Brush="#40000000"
+                            Offset="0,5"
+                            Radius="10"
+                            Opacity="0.8"/>
+                </Button.Shadow>
+
+            </Button>
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>

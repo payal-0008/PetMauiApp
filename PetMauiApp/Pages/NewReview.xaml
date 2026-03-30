@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.NewReview"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="NewReview">
+    <Grid RowDefinitions="Auto, *">
+        <Grid HeightRequest="60" BackgroundColor="{StaticResource PassColor}">
+            <HorizontalStackLayout VerticalOptions="Center" Margin="20,0" Spacing="20">
+               
+                <Label Text="Add Review" TextColor="{StaticResource BtnTextColor}" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </Grid>
+
+        <ScrollView Grid.Row="1" Padding="30">
+            <VerticalStackLayout Spacing="30">
+
+                <HorizontalStackLayout Spacing="15">
+                    <Image Source="haylie_avatar.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill">
+                        <Image.Clip>
+                            <EllipseGeometry Center="30,30" RadiusX="30" RadiusY="30"/>
+                        </Image.Clip>
+                    </Image>
+                    <VerticalStackLayout VerticalOptions="Center">
+                        <Label Text="Haylie Aminoff" FontAttributes="Bold" FontSize="18" TextColor="{StaticResource TextColor}"/>
+                        <Label Text="Posting Publicly*" FontSize="12" TextColor="{StaticResource TitleColor}"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" Margin="0,20">
+                    <Label Text="☆" FontSize="50" TextColor="{StaticResource TitleColor}"/>
+                    <Label Text="☆" FontSize="50" TextColor="{StaticResource TitleColor}"/>
+                    <Label Text="☆" FontSize="50" TextColor="{StaticResource TitleColor}"/>
+                    <Label Text="☆" FontSize="50" TextColor="{StaticResource TitleColor}"/>
+                    <Label Text="☆" FontSize="50" TextColor="{StaticResource TitleColor}"/>
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="  Share more about your experience" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                    <Frame BorderColor="{StaticResource TextColor}" CornerRadius="10" Padding="10" HasShadow="False" HeightRequest="150">
+                        <Editor Placeholder="Share details of your own experience at this place" 
+                                AutoSize="Disabled"
+                                TextColor="{StaticResource TextColor}"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <Button Text="Post Review" 
+                        BackgroundColor="{StaticResource PassColor}" 
+                        TextColor="{StaticResource BtnTextColor}" 
+                        CornerRadius="10" 
+                        HeightRequest="60" 
+                        FontSize="18" 
+                        FontAttributes="Bold"
+                        Margin="0,20"
+                        Clicked="OnPostReviewClicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

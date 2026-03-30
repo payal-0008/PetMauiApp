@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.AddDevice"
+             Shell.NavBarIsVisible="False"
+             Shell.BackgroundColor="{StaticResource BtnTextColor}"
+             Title="AddDevice">
+    <Grid RowDefinitions="Auto, Auto, *">
+        <Grid BackgroundColor="{StaticResource PassColor}" HeightRequest="60" Padding="15,0">
+            <Label Text="←" TextColor="{StaticResource BtnTextColor}" FontSize="25" VerticalOptions="Center">
+            </Label>
+            <Label Text="Add Device" TextColor="{StaticResource BtnTextColor}" FontSize="18" 
+                   HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1" Padding="20" BackgroundColor="{StaticResource BtnTextColor}">
+            <Button Text="Scan Device" BackgroundColor="{StaticResource PassColor}" TextColor="{StaticResource TextColor}"
+                    CornerRadius="20" HorizontalOptions="End" WidthRequest="150" HeightRequest="45"/>
+            <Label Text="Select Device" FontSize="20" FontAttributes="Bold" Margin="0,20,0,10" TextColor="{StaticResource TextColor}"/>
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="2" 
+                        ItemsSource="{Binding Devices}" 
+                        SelectionMode="Single" 
+                        BackgroundColor="{StaticResource BtnTextColor}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="6"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeThickness="0" Padding="15" BackgroundColor="{StaticResource groundcolor}" Margin="25,0,25,6" HeightRequest="90">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15" />
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="60, *, Auto">
+                            <Image Source="{Binding Image}" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+                            <Label Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" 
+                                   VerticalOptions="Center" Margin="15,0" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                            <Label Grid.Column="2" Text="🔗" FontSize="20" VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.Dashboard"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="Dashboard">
+    <ScrollView>
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" Padding="0,0,0,20">
+
+        <Grid 
+            BackgroundColor="{StaticResource PassColor}"
+            ColumnDefinitions="*,Auto">
+
+            <Label 
+                Text="Hey Pixel Posse"
+                FontSize="18"
+                Padding="25,10,0,0"
+                VerticalOptions="Center"
+                TextColor="{StaticResource BtnTextColor}"/>
+
+                <Image Source="pet"  Grid.Column="1"   WidthRequest="70"
+                      HeightRequest="70"   Margin="0,12,10,0"/>
+            </Grid>
+            <VerticalStackLayout Spacing="15" Padding="0,10,10,10" Grid.Row="1">
+                <Frame CornerRadius="20" Margin="15,10,10,0" Padding="15,0,0,15"   HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+                        
+                        <Label Text="𓃠 My Pets" FontAttributes="Bold" TextColor="{StaticResource TextColor}" FontSize="18" Padding="10,10,0,0"/>
+                        <CollectionView ItemsSource="{Binding Pets}"
+                        ItemsLayout="HorizontalList"
+                                     HeightRequest="120">
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <VerticalStackLayout Spacing="5" Margin="12,5,10,0" >
+                                        <VerticalStackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnPetTapped" CommandParameter="{Binding .}" />
+                                        </VerticalStackLayout.GestureRecognizers>
+                                        <Frame CornerRadius="15"  HeightRequest="90"
+                                            WidthRequest="100" Padding="0,5,0,0" BackgroundColor="{Binding BackColor}"  HasShadow="False"
+                                               InputTransparent="True">
+                                            <Image Source="{Binding Image}" Aspect="AspectFill"/>
+                                        </Frame>
+
+                                        <Label Text="{Binding Name}" FontSize="15"  FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource TextColor}" InputTransparent="True"/>
+                                    </VerticalStackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+            <Grid ColumnDefinitions="*,*" Margin="15" Grid.Row="2" ColumnSpacing="10" HeightRequest="300">
+
+                <Frame CornerRadius="20" BackgroundColor="{StaticResource BtnTextColor}" Padding="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnPetLocationTapped" />
+                    </Frame.GestureRecognizers>
+                    <VerticalStackLayout>
+                        <Label Text="Pet Location" FontAttributes="Bold" TextColor="{StaticResource TextColor}" FontSize="18" HorizontalTextAlignment="Center"/>
+
+                        <Image Source="map.png"  Aspect="AspectFill" Margin="0,15,0,0" HeightRequest="250"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Column="1" CornerRadius="20" BackgroundColor="{StaticResource BtnTextColor}" Padding="10">
+                    <VerticalStackLayout>
+                        <Label Text="Pet Status" FontAttributes="Bold" TextColor="{StaticResource TextColor}" FontSize="18" HorizontalTextAlignment="Center"/>
+
+                        <Label Text="Health" TextColor="{StaticResource TextColor}"/>
+                        <ProgressBar Progress="0.9" ProgressColor="green"/>
+                        <Label Text="Food" TextColor="{StaticResource TextColor}"/>
+                        <ProgressBar Progress="0.7" ProgressColor="Red"/>
+
+                        <Label Text="Water" TextColor="{StaticResource TextColor}"/>
+                        <ProgressBar Progress="0.5" ProgressColor="Red"/>
+
+
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame Grid.Column="1" CornerRadius="20" BackgroundColor="{StaticResource BtnTextColor}" Padding="10" HasShadow="True">
+                    <VerticalStackLayout Spacing="18">
+                        <Label Text="🐾 Pet Status" FontAttributes="Bold" TextColor="{StaticResource TextColor}" FontSize="16" HorizontalTextAlignment="Center"/>
+
+                        <Grid ColumnDefinitions="50,*" ColumnSpacing="9">
+                            <Frame WidthRequest="50" HeightRequest="55" CornerRadius="10" Padding="0" BackgroundColor="#F0BB22" HasShadow="True" BorderColor="{StaticResource EntColor}">
+                                <Image Source="dog1.png" Aspect="AspectFill"/>
+                            </Frame>
+                            <VerticalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+                                <Grid ColumnDefinitions="35,*,25">
+                                    <Label Text="Health" FontSize="10" TextColor="{StaticResource txtcolor}" VerticalOptions="Center"/>
+                                    <ProgressBar Grid.Column="1" Progress="0.88" ProgressColor="{StaticResource BarColor}" ScaleY="2.5" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="88%" FontSize="9" TextColor="{StaticResource BarColor}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="35,*,25">
+                                    <Label Text="Food" FontSize="10" TextColor="{StaticResource txtcolor}" VerticalOptions="Center"/>
+                                    <ProgressBar Grid.Column="1" Progress="0.48" ProgressColor="{StaticResource BarColor1}" ScaleY="2.5" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="48%" FontSize="9" TextColor="{StaticResource BarColor1}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="35,*,25">
+                                    <Label Text="Mood" FontSize="10" TextColor="{StaticResource txtcolor}" VerticalOptions="Center"/>
+                                    <ProgressBar Grid.Column="1" Progress="0.51" ProgressColor="{StaticResource BarColor1}" ScaleY="2.5" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="51%" FontSize="9" TextColor="{StaticResource BarColor1}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <BoxView HeightRequest="1" BackgroundColor="#F0F0F0" Margin="5,0"/>
+
+                        <Grid ColumnDefinitions="50,*" ColumnSpacing="10">
+                            <Frame WidthRequest="50" HeightRequest="55" CornerRadius="10" Padding="0" BackgroundColor="#9BA7C9" HasShadow="True" BorderColor="{StaticResource EntColor}">
+                                <Image Source="dog2.png" Aspect="AspectFill"/>
+                            </Frame>
+                            <VerticalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+                                <Grid ColumnDefinitions="35,*,25">
+                                    <Label Text="Health" FontSize="10" TextColor="{StaticResource txtcolor}" VerticalOptions="Center"/>
+                                    <ProgressBar Grid.Column="1" Progress="0.88" ProgressColor="{StaticResource BarColor}" ScaleY="2.5" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="88%" FontSize="9" TextColor="{StaticResource BarColor}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="35,*,25">
+                                    <Label Text="Food" FontSize="10" TextColor="{StaticResource txtcolor}" VerticalOptions="Center"/>
+                                    <ProgressBar Grid.Column="1" Progress="0.48" ProgressColor="{StaticResource BarColor1}" ScaleY="2.5" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="48%" FontSize="9" TextColor="{StaticResource BarColor1}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="35,*,25">
+                                    <Label Text="Mood" FontSize="10" TextColor="{StaticResource txtcolor}" VerticalOptions="Center"/>
+                                    <ProgressBar Grid.Column="1" Progress="0.51" ProgressColor="{StaticResource BarColor1}" ScaleY="2.5" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="51%" FontSize="9" TextColor="{StaticResource BarColor1}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <BoxView HeightRequest="1" BackgroundColor="#F0F0F0" Margin="5,0"/>
+
+                        <Grid ColumnDefinitions="50,*" ColumnSpacing="10">
+                            <Frame WidthRequest="50" HeightRequest="55" CornerRadius="10" Padding="0" BackgroundColor="#E28E69" HasShadow="True" BorderColor="Transparent">
+                                <Image Source="dog3.png" Aspect="AspectFill"/>
+                            </Frame>
+                            <VerticalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+                                <Grid ColumnDefinitions="35,*,25">
+                                    <Label Text="Health" FontSize="10" TextColor="{StaticResource txtcolor}" VerticalOptions="Center"/>
+                                    <ProgressBar Grid.Column="1" Progress="0.88" ProgressColor="{StaticResource BarColor}" ScaleY="2.5" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="88%" FontSize="9" TextColor="{StaticResource BarColor}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="35,*,25">
+                                    <Label Text="Food" FontSize="10" TextColor="{StaticResource txtcolor}" VerticalOptions="Center"/>
+                                    <ProgressBar Grid.Column="1" Progress="0.48" ProgressColor="{StaticResource BarColor1}" ScaleY="2.5" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="48%" FontSize="9" TextColor="{StaticResource BarColor1}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="35,*,25">
+                                    <Label Text="Mood" FontSize="10" TextColor="{StaticResource txtcolor}" VerticalOptions="Center"/>
+                                    <ProgressBar Grid.Column="1" Progress="0.51" ProgressColor="{StaticResource BarColor1}" ScaleY="2.5" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="51%" FontSize="9" TextColor="{StaticResource BarColor1}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+            <Frame CornerRadius="25" 
+                   Margin="15,10" 
+                   Padding="15" 
+                   BackgroundColor="{StaticResource BtnTextColor}" 
+                   HasShadow="True"
+                   Grid.Row="3">
+                <VerticalStackLayout Spacing="15">
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Label Text="🥣 Pet Food" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                    </HorizontalStackLayout>
+
+                    <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="5">
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="12">
+
+                            <Border StrokeShape="RoundRectangle 15" StrokeThickness="1" Stroke="{StaticResource BgColor}" Padding="10">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnProductDetailTapped" CommandParameter="Josera" />
+                                </Border.GestureRecognizers>
+                                <Grid ColumnDefinitions="70, *, Auto" ColumnSpacing="12">
+                                    <Image Grid.Column="0" Source="image.png" HeightRequest="70" Aspect="AspectFit">
+                                    
+                                    </Image>
+
+                                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                                        <Label Text="Josera" FontSize="12" TextColor="{StaticResource BtnColor}" FontAttributes="Bold"/>
+                                        <Label Text="Josi Dog Master Mix" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource TextColor}"/>
+                                        <Label Text="900g" FontSize="11" TextColor="{StaticResource TitleColor}"/>
+                                        <Border Stroke="#F0BB22" StrokeShape="RoundRectangle 8" HorizontalOptions="Start" Padding="8,2" Margin="0,4,0,0">
+                                            <Label Text="Bella" FontSize="10" TextColor="#F0BB22"/>
+                                        </Border>
+                                    </VerticalStackLayout>
+
+                                <Button Grid.Column="2" ImageSource="right.png" 
+                                   BackgroundColor="#87C386" CornerRadius="20"
+                                   HeightRequest="40" VerticalOptions="Center"
+                                        Clicked="btn_cart"/>
+                                </Grid>
+                            </Border>
+
+                            <Border StrokeShape="RoundRectangle 15" StrokeThickness="1" Stroke="{StaticResource BgColor}" Padding="10">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnProductDetailTapped" CommandParameter="HappyPet" />
+                                </Border.GestureRecognizers>
+                                <Grid ColumnDefinitions="70, *, Auto" ColumnSpacing="12">
+                                    <Image Grid.Column="0" Source="image2.png" HeightRequest="90" Aspect="AspectFit"/>
+
+                                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                                        <Label Text="Happy Pet" FontSize="12" TextColor="{StaticResource BtnColor}" FontAttributes="Bold"/>
+                                        <Label Text="Happy Dog - Profi Line High Energy 30-20" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource TextColor}"/>
+                                        <Label Text="500g" FontSize="11" TextColor="{StaticResource TitleColor}"/>
+                                        <HorizontalStackLayout Spacing="5" Margin="0,4,0,0">
+                                            <Border Stroke="#7A86AE" StrokeShape="RoundRectangle 8" Padding="8,2">
+                                                <Label Text="Rowdy" FontSize="10" TextColor="#7A86AE"/>
+                                            </Border>
+                                            <Border Stroke="#E28E69" StrokeShape="RoundRectangle 8" Padding="8,2">
+                                                <Label Text="Furry" FontSize="10" TextColor="#E28E69"/>
+                                            </Border>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+
+                                    <Button Grid.Column="2" ImageSource="right.png" Padding="10" 
+                                BackgroundColor="#87C386" CornerRadius="20" 
+                                HeightRequest="40" WidthRequest="40" VerticalOptions="Center" Clicked="btn_cart"/>
+                                </Grid>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <Image Grid.Column="2" Source="right_arrow.png" 
+                         HeightRequest="30" VerticalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="frame_next"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame Grid.Row="4" CornerRadius="25" Margin="15,10" Padding="20" BackgroundColor="{StaticResource BtnTextColor}" HasShadow="True">
+            <VerticalStackLayout Spacing="15">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="vet_icon.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Vets" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+                </HorizontalStackLayout>
+
+                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="5">
+                   
+                        <Frame Grid.Column="1" CornerRadius="15" Padding="15" BorderColor="{StaticResource BtnTextColor}">
+                        <VerticalStackLayout Spacing="10">
+                            <Grid ColumnDefinitions="100,*" ColumnSpacing="15">
+                                <Frame CornerRadius="10" Padding="0" HeightRequest="80">
+                                        <Image Source="dr.png" Aspect="AspectFill">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="vetdr"/>
+                                            </Image.GestureRecognizers>
+                                               
+                                        </Image>
+                                </Frame>
+                                <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
+                                    <Label Text="Dr. Nambuvan" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                                        <Label Text="Bachelor of veterinary science" FontSize="11" TextColor="{StaticResource txtcolor}"/>
+                                    <HorizontalStackLayout Spacing="2" Margin="0,4">
+                                        <Label Text="⭐⭐⭐⭐⭐" FontSize="12"/>
+                                            <Label Text=" 5.0 {100 reviews}>" FontSize="11" TextColor="{StaticResource TextColor}"
+                                                   >
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="AddReview"/>
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Grid>
+                                <BoxView HeightRequest="1" BackgroundColor="{StaticResource BtnTextColor}"/>
+                            <Grid ColumnDefinitions="*,*,Auto">
+                                <Label Text="Last Visit: 25/11/2022" FontSize="11" TextColor="{StaticResource TextColor}" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="Book Appointment >" FontSize="11" TextColor="{StaticResource TextColor}" FontAttributes="Bold" HorizontalOptions="End">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="Appointment"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    
+                               
+                    </Grid>
+                        </VerticalStackLayout>
+                    </Frame>
+                        <Image Grid.Column="2" Source="right_arrow.png" WidthRequest="30" VerticalOptions="Center"  >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="next"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+    </ScrollView>
+</ContentPage>

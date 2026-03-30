@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.Regiester"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="Regiester">
+    <Grid RowDefinitions="*,Auto">
+        <ScrollView Padding="0,20,0,0">
+            <VerticalStackLayout Spacing="15">
+                <Image
+                    Source="dogwalk.png"
+                    HeightRequest="200"
+                    HorizontalOptions="Center"/>
+
+                <Label
+                    Text="Login"
+                    FontSize="32"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource TextColor}"
+                    HorizontalOptions="Center"/>
+
+                <Label
+                    Text="By signing in you are agreeing our"
+                    FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   FontSize="19"
+                   TextColor="{StaticResource TitleColor}"/>
+
+                <Label
+                    Text="Term and privacy policy"
+                    HorizontalOptions="Center"
+                    FontSize="17"
+                    TextColor="{StaticResource BtnColor}"
+                    FontAttributes="Bold"/>
+                
+                <HorizontalStackLayout
+                      HorizontalOptions="Center"
+                      Spacing="30">
+
+                    <Label
+                       x:Name="LoginLabel"
+                       Text="Login"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource BtnColor}">
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLoginTapped"/>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+
+                    <Label
+                       x:Name="RegisterLabel"
+                       Text="Register"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="{StaticResource TitleColor}">
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRegisterTapped"/>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout x:Name="LoginLayout">
+
+                    <Grid RowDefinitions="Auto,Auto"
+                        ColumnDefinitions="30,*"
+                        Margin="50,0,50,0"
+                        Padding="20,10,20,0">
+
+                        <Image
+                           Source="email.png"
+                           HeightRequest="18"
+                           VerticalOptions="Center"/>
+
+                        <Entry
+                            x:Name="EmailEntry"
+                            Grid.Column="1"
+                            Placeholder="Email Address"
+                            FontAttributes="Bold"
+                            BackgroundColor="{StaticResource EntColor}"
+                            TextColor="{StaticResource TitleColor}"
+                            PlaceholderColor="{StaticResource TitleColor}"
+                          />
+
+                        <BoxView
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                HeightRequest="1"
+                               Color="{StaticResource TitleColor}"/>
+
+                    </Grid>
+
+                    <Grid RowDefinitions="Auto,Auto"
+                            ColumnDefinitions="30,*"
+                            Margin="50,0,50,0"
+                            Padding="20,10,20,0">
+
+                        <Image
+                                Source="padlock.png"
+                                HeightRequest="18"
+                                VerticalOptions="Center"/>
+
+                        <Entry
+                            x:Name="PasswordEntry"
+                              Grid.Column="1"
+                              Placeholder="Password"
+                              FontAttributes="Bold"
+                              BackgroundColor="{StaticResource EntColor}"
+                              TextColor="{StaticResource TitleColor}"
+                              PlaceholderColor="{StaticResource TitleColor}"
+                           />
+
+                        <BoxView
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            HeightRequest="1"
+                            Color="{StaticResource TitleColor}"/>
+                       
+
+                    </Grid>
+                    <Grid 
+                       RowDefinitions="*,*"
+                       Padding="45,20,0,0"
+                        >
+
+                        <HorizontalStackLayout Spacing="6" Padding="45,0,0,0">
+                            <Image
+                               Source="check.png"
+                               HeightRequest="18" />
+
+                            <Label
+                               Text="Remember password"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource TitleColor}"/>
+
+                        </HorizontalStackLayout>
+                    </Grid>
+
+                    <Grid 
+                        RowDefinitions="*,*" Padding="45,10,0,0">
+                        <HorizontalStackLayout Spacing="6" Padding="45,0,0,0">
+
+                            <Image
+                               Source="question.png"
+                               HeightRequest="18"/>
+
+                            <Label
+                               Text="Forget password"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource TitleColor}"/>
+                        </HorizontalStackLayout>
+                    </Grid>
+                    <Button
+                        Text="LOGIN"
+                        BackgroundColor="{StaticResource PassColor}"
+                        TextColor="{StaticResource TextColor}"
+                        FontFamily="PoppinsBold"
+                        CornerRadius="10"
+                        FontAttributes="Bold"
+                        Clicked="LoginTapped"
+                        Opacity="0.9"
+                        HeightRequest="50"
+                        Margin="30"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout x:Name="RegisterLayout" IsVisible="False">
+
+                    <Grid RowDefinitions="Auto,Auto"
+                          ColumnDefinitions="30,*"
+                          Margin="50,0,50,0"
+                         Padding="20,10,20,0">
+
+                        <Image
+                           Source="fpic.png"
+                           HeightRequest="18"
+                           VerticalOptions="Center"/>
+
+                        <Entry
+                            Grid.Column="1"
+                            Placeholder="Full Name"
+                            FontAttributes="Bold"
+                            BackgroundColor="{StaticResource EntColor}"
+                            TextColor="{StaticResource TitleColor}"
+                            PlaceholderColor="{StaticResource TitleColor}"/>
+
+                        <BoxView
+                             Grid.Row="1"
+                             Grid.ColumnSpan="2"
+                             HeightRequest="1"
+                             Color="{StaticResource TitleColor}"/>
+
+                    </Grid>
+
+                    <Grid RowDefinitions="Auto,Auto"
+                       ColumnDefinitions="30,*"
+                       Margin="50,0,50,0"
+                       Padding="20,10,20,0">
+
+                        <Image
+                            Source="email.png"
+                            HeightRequest="18"
+                            VerticalOptions="Center"/>
+
+                        <Entry
+                              Grid.Column="1"
+                              Placeholder="Email Address"
+                              FontAttributes="Bold"
+                              BackgroundColor="{StaticResource EntColor}"
+                              TextColor="{StaticResource TitleColor}"
+                              PlaceholderColor="{StaticResource TitleColor}"/>
+
+                        <BoxView
+                             Grid.Row="1"
+                             Grid.ColumnSpan="2"
+                             HeightRequest="1"
+                             Color="{StaticResource TitleColor}"/>
+
+                    </Grid>
+
+                    <Grid RowDefinitions="Auto,Auto"
+                        ColumnDefinitions="30,*"
+                        Margin="50,0,50,0"
+                        Padding="20,10,20,0">
+
+                        <Image
+                           Source="padlock.png"
+                           HeightRequest="18"
+                           VerticalOptions="Center"/>
+
+                        <Entry
+                            Grid.Column="1"
+                            Placeholder="Password"
+                            IsPassword="True"
+                            FontAttributes="Bold"
+                            BackgroundColor="{StaticResource EntColor}"
+                            TextColor="{StaticResource TitleColor}"
+                            PlaceholderColor="{StaticResource TitleColor}"/>
+
+                        <BoxView
+                           Grid.Row="1"
+                           Grid.ColumnSpan="2"
+                           HeightRequest="1"
+                           Color="{StaticResource TitleColor}"/>
+
+                    </Grid>
+
+                    <Button
+                         Text="REGISTER"
+                         BackgroundColor="{StaticResource PassColor}"
+                         TextColor="{StaticResource TextColor}"
+                         FontAttributes="Bold"
+                         CornerRadius="10"
+                         HeightRequest="50"
+                         Margin="30"
+                        Clicked="Btn"/>
+
+                </VerticalStackLayout>
+                
+                <Label
+                 Text="or connect with"
+                 HorizontalOptions="Center"
+                 FontSize="14"
+                 FontAttributes="Bold"
+                 TextColor="{StaticResource TitleColor}"/>
+
+                <HorizontalStackLayout
+                 HorizontalOptions="Center"
+                 Spacing="20">
+
+                    <Image Source="fb.png" HeightRequest="30" />
+                    <Image Source="instagram.png" HeightRequest="30"/>
+                    <Image Source="pin.png" HeightRequest="30" />
+                    <Image Source="link.png" HeightRequest="30" />
+
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+        <Border
+           Grid.Row="1"
+           BackgroundColor="{StaticResource PassColor}"
+           StrokeShape="RoundRectangle 40,40,0,0"
+           StrokeThickness="1"
+            Opacity="0.7"
+           Padding="20">
+            
+        </Border>
+
+    </Grid>
+</ContentPage>

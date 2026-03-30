@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.PetDetailPage"
+             Shell.NavBarIsVisible="False"
+             Shell.BackgroundColor="{StaticResource BtnTextColor}"
+             Title="PetDetailPage">
+    <Grid RowDefinitions="300, *">
+        <BoxView BackgroundColor="{Binding BackColor}" CornerRadius="0,0,40,40"/>
+
+        <VerticalStackLayout Grid.Row="0" VerticalOptions="Center" Spacing="10">
+            <Image Source="{Binding Image}" HeightRequest="180" Aspect="AspectFit"/>
+            <Label Text="{Binding Name}" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource BtnTextColor}"/>
+        </VerticalStackLayout>
+
+        <ScrollView Grid.Row="1" Margin="0,-30,0,0">
+            <Border  Padding="25" BackgroundColor="{StaticResource BtnTextColor}" StrokeThickness="0">
+                <VerticalStackLayout Spacing="20">
+                    <Label Text="Pet Information" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
+
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto, Auto, Auto" RowSpacing="20">
+                        <VerticalStackLayout Grid.Row="0" Grid.Column="0">
+                            <Label Text="Breed" TextColor="{StaticResource TitleColor}" FontSize="12"/>
+                            <Label Text="{Binding Breed}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Row="0" Grid.Column="1">
+                            <Label Text="Gender" TextColor="{StaticResource TitleColor}" FontSize="12"/>
+                            <Label Text="{Binding Gender}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Row="1" Grid.Column="0">
+                            <Label Text="Age" TextColor="{StaticResource TitleColor}" FontSize="12"/>
+                            <Label Text="{Binding Age}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+                            <Label Text="Color" TextColor="{StaticResource TitleColor}" FontSize="12"/>
+                            <Label Text="{Binding Color}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Row="2" Grid.Column="0">
+                            <Label Text="Weight" TextColor="{StaticResource TitleColor}" FontSize="12"/>
+                            <Label Text="{Binding Weight}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+        </ScrollView>
+    </Grid>
+</ContentPage>

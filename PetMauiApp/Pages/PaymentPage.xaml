@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMauiApp.Pages.PaymentPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource BtnTextColor}"
+             Title="PaymentPage">
+    <Grid RowDefinitions="Auto, *">
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource PassColor}" HeightRequest="60" Padding="15,0">
+            <ImageButton Source="back_white.png" HorizontalOptions="Start" HeightRequest="20" VerticalOptions="Center" Clicked="OnBackClicked"/>
+            <Label Text="Payment" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontAttributes="Bold" FontSize="18"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20" Spacing="18">
+
+                <Border StrokeShape="RoundRectangle 10" StrokeThickness="1" Stroke="{StaticResource groundcolor}" Padding="15">
+                    <Border.Shadow>
+                        <Shadow Brush="{StaticResource TextColor}" Offset="0,2" Radius="5" Opacity="0.1"/>
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Transaction Details" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                        <Label Text="Transaction Amount" FontSize="14" Margin="0,5,0,0" TextColor="{StaticResource TextColor}"/>
+                        <Label Text="15000.00 LKR" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource TextColor}"/>
+                        <Label Text="Transaction Reference No" FontSize="14" Margin="0,5,0,0" TextColor="{StaticResource TextColor}"/>
+                        <Label Text="A13XI45SCSA44J" FontAttributes="Bold" FontSize="15" TextColor="{StaticResource TextColor}"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Select card type" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource TextColor}"/>
+                <HorizontalStackLayout Spacing="12">
+                    <Border StrokeThickness="1" Stroke="{StaticResource groundcolor}" Padding="5" StrokeShape="RoundRectangle 5">
+                        <Image Source="visa.png" HeightRequest="30" WidthRequest="50"/>
+                    </Border>
+                    <Border StrokeThickness="1" Stroke="{StaticResource groundcolor}" Padding="5" StrokeShape="RoundRectangle 5">
+                        <Image Source="mastercard.png" HeightRequest="30" WidthRequest="50"/>
+                    </Border>
+                    <Border StrokeThickness="1" Stroke="{StaticResource groundcolor}" Padding="5" StrokeShape="RoundRectangle 5">
+                        <Image Source="amex.png" HeightRequest="30" WidthRequest="50"/>
+                    </Border>
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout Spacing="15">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Card number" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource TextColor}"/>
+                        <Border StrokeShape="RoundRectangle 10" StrokeThickness="1" Stroke="{StaticResource groundcolor}" BackgroundColor="{StaticResource groundcolor}" HeightRequest="45">
+                            <Entry Keyboard="Numeric" Margin="10,0" VerticalOptions="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Name on the card" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource TextColor}"/>
+                        <Border StrokeShape="RoundRectangle 10" StrokeThickness="1" Stroke="{StaticResource groundcolor}" BackgroundColor="{StaticResource groundcolor}" HeightRequest="45">
+                            <Entry Keyboard="Text" Margin="10,0" VerticalOptions="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="15">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="CVC Number" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource TextColor}"/>
+                            <Border StrokeShape="RoundRectangle 10" StrokeThickness="1" Stroke="{StaticResource groundcolor}" BackgroundColor="#E8E8E8" HeightRequest="40" WidthRequest="100" HorizontalOptions="Start">
+                                <Entry Keyboard="Numeric" MaxLength="3" IsPassword="True" HorizontalTextAlignment="Center"/>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="5">
+                            <Label Text="Expiring Date" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource TextColor}"/>
+                            <HorizontalStackLayout Spacing="8">
+                                <Border StrokeShape="RoundRectangle 10" StrokeThickness="1" Stroke="{StaticResource groundcolor}" BackgroundColor="#E8E8E8" HeightRequest="40" WidthRequest="55">
+                                    <Entry Placeholder="MM" Keyboard="Numeric" MaxLength="2" HorizontalTextAlignment="Center" FontSize="12"/>
+                                </Border>
+                                <Label Text="/" VerticalOptions="Center" FontSize="18" TextColor="{StaticResource TextColor}"/>
+                                <Border StrokeShape="RoundRectangle 10" StrokeThickness="1" Stroke="{StaticResource groundcolor}" BackgroundColor="#E8E8E8" HeightRequest="40" WidthRequest="55">
+                                    <Entry Placeholder="YY" Keyboard="Numeric" MaxLength="2" HorizontalTextAlignment="Center" FontSize="12"/>
+                                </Border>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <Button Text="PAY NOW" 
+                        BackgroundColor="{StaticResource PassColor}" 
+                        TextColor="{StaticResource BtnTextColor}" 
+                        FontAttributes="Bold" 
+                        CornerRadius="10" 
+                        HeightRequest="55" 
+                        Margin="0,15,0,0"
+                        Clicked="OnPayNowClicked"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

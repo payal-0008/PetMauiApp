@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "799983252439",
+    "project_id": "apppet-77bc3",
+    "storage_bucket": "apppet-77bc3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799983252439:android:1ea3aa3511ae23a8189192",
+        "android_client_info": {
+          "package_name": "com.companyname.petmauiapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcCGJH5CqvJLxsKWR0Amz0uojEmas0ZmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
