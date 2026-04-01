@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="PetMauiApp/PetMauiApp.csproj" />
+  <Project Path="PetMauiApp/PetMauiApp.csproj">
+    <Deploy />
+  </Project>
 </Solution>

@@ -15,7 +15,7 @@
     <TabBar>
         <Tab  Title="Home" Icon="home.png">
             <ShellContent
-               ContentTemplate="{DataTemplate Pages:Get_Started}" Route="Dashboard"/>
+               ContentTemplate="{DataTemplate Pages:Dashboard}" Route="Dashboard"/>
         </Tab>
         <Tab  Title="Discover" Icon="compass.png">
             <ShellContent

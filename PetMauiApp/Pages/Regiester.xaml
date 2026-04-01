@@ -34,30 +34,17 @@
                     FontSize="17"
                     TextColor="{StaticResource BtnColor}"
                     FontAttributes="Bold"/>
-                
+
                 <HorizontalStackLayout
                       HorizontalOptions="Center"
                       Spacing="30">
-
-                    <Label
-                       x:Name="LoginLabel"
-                       Text="Login"
-                       FontSize="18"
-                       FontAttributes="Bold"
-                       TextColor="{StaticResource BtnColor}">
-
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnLoginTapped"/>
-                        </Label.GestureRecognizers>
-
-                    </Label>
-
+                    
                     <Label
                        x:Name="RegisterLabel"
                        Text="Register"
                        FontAttributes="Bold"
                        FontSize="18"
-                       TextColor="{StaticResource TitleColor}">
+                       TextColor="{StaticResource BtnColor}">
 
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnRegisterTapped"/>
@@ -65,9 +52,21 @@
 
                     </Label>
 
+                    <Label
+                       x:Name="LoginLabel"
+                       Text="Login"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource TitleColor }">
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLoginTapped"/>
+                        </Label.GestureRecognizers>
+
+                    </Label>
                 </HorizontalStackLayout>
 
-                <VerticalStackLayout x:Name="LoginLayout">
+                <VerticalStackLayout x:Name="LoginLayout" IsVisible="False">
 
                     <Grid RowDefinitions="Auto,Auto"
                         ColumnDefinitions="30,*"
@@ -122,7 +121,7 @@
                             Grid.ColumnSpan="2"
                             HeightRequest="1"
                             Color="{StaticResource TitleColor}"/>
-                       
+
 
                     </Grid>
                     <Grid 
@@ -156,7 +155,7 @@
                                Text="Forget password"
                                FontSize="14"
                                FontAttributes="Bold"
-                               TextColor="{StaticResource TitleColor}"/>
+                               TextColor="{StaticResource TitleColor}" />
                         </HorizontalStackLayout>
                     </Grid>
                     <Button
@@ -171,7 +170,7 @@
                         HeightRequest="50"
                         Margin="30"/>
                 </VerticalStackLayout>
-                <VerticalStackLayout x:Name="RegisterLayout" IsVisible="False">
+                <VerticalStackLayout x:Name="RegisterLayout">
 
                     <Grid RowDefinitions="Auto,Auto"
                           ColumnDefinitions="30,*"
@@ -186,6 +185,7 @@
                         <Entry
                             Grid.Column="1"
                             Placeholder="Full Name"
+                            x:Name="RegNameEntry"
                             FontAttributes="Bold"
                             BackgroundColor="{StaticResource EntColor}"
                             TextColor="{StaticResource TitleColor}"
@@ -212,6 +212,7 @@
                         <Entry
                               Grid.Column="1"
                               Placeholder="Email Address"
+                              x:Name="RegEmailEntry"
                               FontAttributes="Bold"
                               BackgroundColor="{StaticResource EntColor}"
                               TextColor="{StaticResource TitleColor}"
@@ -238,6 +239,7 @@
                         <Entry
                             Grid.Column="1"
                             Placeholder="Password"
+                            x:Name="RegPasswordEntry"
                             IsPassword="True"
                             FontAttributes="Bold"
                             BackgroundColor="{StaticResource EntColor}"
@@ -263,7 +265,7 @@
                         Clicked="Btn"/>
 
                 </VerticalStackLayout>
-                
+
                 <Label
                  Text="or connect with"
                  HorizontalOptions="Center"
@@ -285,15 +287,5 @@
             </VerticalStackLayout>
 
         </ScrollView>
-        <Border
-           Grid.Row="1"
-           BackgroundColor="{StaticResource PassColor}"
-           StrokeShape="RoundRectangle 40,40,0,0"
-           StrokeThickness="1"
-            Opacity="0.7"
-           Padding="20">
-            
-        </Border>
-
     </Grid>
 </ContentPage>

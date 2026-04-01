@@ -1,10 +1,8 @@
 ﻿using System;
 using Android.App;
 using Android.Content.PM;
-using Android.Graphics;
 using Android.OS;
 using Android.Content;
-using Android.Content.PM;
 using Android.Util;
 using Plugin.Firebase.CloudMessaging;
 using Firebase;

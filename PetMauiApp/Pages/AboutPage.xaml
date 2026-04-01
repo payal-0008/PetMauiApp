@@ -33,16 +33,16 @@
                 <Label Text="Tech Stack" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource TextColor}" Margin="0,10,0,0"/>
                 <FlexLayout Wrap="Wrap" Direction="Row" JustifyContent="Start" AlignItems="Center" HorizontalOptions="Fill">
                     <Border Margin="5" Padding="12,5" StrokeShape="RoundRectangle 20" BackgroundColor="{StaticResource groundcolor}" StrokeThickness="0">
-                        <Label Text=".NET MAUI" TextColor="{StaticResource BarColor}" FontSize="13" FontAttributes="Bold"/>
+                        <Label Text=".NET MAUI" TextColor="#1565C0" FontSize="13" FontAttributes="Bold"/>
                     </Border>
                     <Border Margin="5" Padding="12,5" StrokeShape="RoundRectangle 20" BackgroundColor="{StaticResource groundcolor}" StrokeThickness="0">
                         <Label Text="C# &amp; XAML" TextColor="#1565C0" FontSize="13" FontAttributes="Bold"/>
                     </Border>
                     <Border Margin="5" Padding="12,5" StrokeShape="RoundRectangle 20" BackgroundColor="{StaticResource groundcolor}" StrokeThickness="0">
-                        <Label Text="MVVM Architecture" TextColor="#EF6C00" FontSize="13" FontAttributes="Bold"/>
+                        <Label Text="MVVM Architecture" TextColor="#1565C0" FontSize="13" FontAttributes="Bold"/>
                     </Border>
                     <Border Margin="5" Padding="12,5" StrokeShape="RoundRectangle 20" BackgroundColor="{StaticResource groundcolor}" StrokeThickness="0">
-                        <Label Text="UI/UX Design" TextColor="#7B1FA2" FontSize="13" FontAttributes="Bold"/>
+                        <Label Text="UI/UX Design" TextColor="#1565C0" FontSize="13" FontAttributes="Bold"/>
                     </Border>
                 </FlexLayout>
 
@@ -55,7 +55,7 @@
                     </VerticalStackLayout>
                 </Border>
 
-                <Button Text="Let's Connect" 
+                <Button Text="Visit LinkedIn" 
                         BackgroundColor="{StaticResource PassColor}" 
                         TextColor="{StaticResource BtnTextColor}" 
                         CornerRadius="25" 

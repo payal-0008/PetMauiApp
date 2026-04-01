@@ -7,7 +7,7 @@
              Title="ProductDetailPage">
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="{StaticResource BtnTextColor}">
-            <Image Source="{Binding Image}" HeightRequest="250" Aspect="AspectFit"/>
+            <Image Source="{Binding Image}" HeightRequest="220" Aspect="AspectFit" Margin="0,20,0,0"/>
           
             <Label Text="{Binding Brand}" TextColor="{StaticResource PassColor}" FontSize="14" FontAttributes="Bold"/>
             <Label Text="{Binding Name}" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>

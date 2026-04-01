@@ -2,23 +2,12 @@ using Plugin.Firebase.CloudMessaging;
 using Microsoft.Maui.Controls;
 namespace PetMauiApp.Pages;
 
-
-
 public partial class Regiester : ContentPage
 {
 	public Regiester()
 	{
 		InitializeComponent();
     }
-	
-    private void OnLoginTapped(object sender, EventArgs e)
-    {
-        LoginLayout.IsVisible = true;
-        RegisterLayout.IsVisible = false;
-        LoginLabel.TextColor = (Color)Application.Current.Resources["BtnColor"];
-        RegisterLabel.TextColor = (Color)Application.Current.Resources["TitleColor"];
-    }
-
     private void OnRegisterTapped(object sender, EventArgs e)
     {
         LoginLayout.IsVisible = false;
@@ -26,13 +15,19 @@ public partial class Regiester : ContentPage
         RegisterLabel.TextColor = (Color)Application.Current.Resources["BtnColor"];
         LoginLabel.TextColor = (Color)Application.Current.Resources["TitleColor"];
     }
+    private void OnLoginTapped(object sender, EventArgs e)
+    {
+        LoginLayout.IsVisible = true;
+        RegisterLayout.IsVisible = false;
+        LoginLabel.TextColor = (Color)Application.Current.Resources["BtnColor"];
+        RegisterLabel.TextColor = (Color)Application.Current.Resources["TitleColor"];
+    }
     private async void LoginTapped(object sender,EventArgs e)
     {
         {
 #if ANDROID || IOS
             try
             {
-                // Ensure Firebase is initialized for this process. Use Application.Context on Android.
                 try
                 {
                     if (Firebase.FirebaseApp.Instance == null)
@@ -42,7 +37,6 @@ public partial class Regiester : ContentPage
                 }
                 catch (Exception initEx)
                 {
-                    // log init exception but continue to attempt using plugin which will give clearer error in logs
                     System.Diagnostics.Debug.WriteLine($"Firebase init warning: {initEx}");
                 }
 
@@ -66,18 +60,39 @@ public partial class Regiester : ContentPage
         }
         string email = EmailEntry.Text;
         string password = PasswordEntry.Text;
-        if (email == "abc@gmail.com" && password == "123")
+
+        var savedEmail = Preferences.Get("RegEmail", "");
+        var savedPassword = Preferences.Get("RegPassword", "");
+
+        if (email == savedEmail && password == savedPassword)
         {
-            await DisplayAlert("✅ Login Successful", "Welcome back! Redirecting to Dashboard...", "Continue");
-            await Navigation.PushAsync(new Dashboard());
+            Preferences.Set("IsLoggedIn", true);
+
+            await DisplayAlert("✅ Login Successful", "Welcome back!", "Continue");
+
+            Application.Current.Windows[0].Page = new AppShell();
         }
         else
         {
             await DisplayAlert("❌ Login Failed", "Invalid Email or Password", "OK");
         }
     }
-    private async void Btn(object sender,EventArgs e)
+    private async void Btn(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Dashboard());
+        string name = RegNameEntry.Text;
+        string email = RegEmailEntry.Text;
+        string password = RegPasswordEntry.Text;
+
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        {
+            await DisplayAlert("Error", "Please fill all fields", "OK");
+            return;
+        }
+        Preferences.Set("Name", name);
+        Preferences.Set("RegEmail", email);
+        Preferences.Set("RegPassword", password);
+
+        await DisplayAlert("Success", "Registered Successfully", "OK");
+        OnLoginTapped(null, null);
     }
 }

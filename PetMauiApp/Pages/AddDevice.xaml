@@ -21,8 +21,9 @@
 
         <CollectionView Grid.Row="2" 
                         ItemsSource="{Binding Devices}" 
-                        SelectionMode="Single" 
+                        SelectionMode="None"
                         BackgroundColor="{StaticResource BtnTextColor}">
+            
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="6"/>
             </CollectionView.ItemsLayout>

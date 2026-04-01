@@ -14,4 +14,15 @@ public partial class Get_Started : ContentPage
     {
         await Navigation.PushAsync(new Regiester());
     }
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        bool isLoggedIn = Preferences.Get("IsLoggedIn", false);
+
+        if (isLoggedIn)
+        {
+            Application.Current.Windows[0].Page = new AppShell();
+        }
+    }
 }

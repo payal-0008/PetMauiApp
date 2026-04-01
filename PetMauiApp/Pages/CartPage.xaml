@@ -22,7 +22,7 @@
 
                         <Frame Margin="10,15,10,5" BackgroundColor="{StaticResource BtnTextColor}" CornerRadius="15" BorderColor="{StaticResource EntryColor}">
                             <Grid ColumnDefinitions="80, *, 40">
-                                <Image Source="{Binding Image}" HeightRequest="60" Aspect="AspectFit"/>
+                                <Image Source="{Binding Image}" HeightRequest="90" Aspect="AspectFit"/>
                                 <VerticalStackLayout Grid.Column="1" Margin="15,0" VerticalOptions="Center">
                                     <Label Text="{Binding TotalPriceDisplay}" TextColor="{StaticResource PassColor}" FontSize="12" FontAttributes="Bold"/>
                                     <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="Black"/>
