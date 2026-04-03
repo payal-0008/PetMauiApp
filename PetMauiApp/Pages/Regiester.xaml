@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PetMauiApp.Pages.Regiester"
              Shell.TabBarIsVisible="False"
-             Shell.NavBarIsVisible="False"
+           NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource BtnTextColor}"
              Title="Regiester">
     <Grid RowDefinitions="*,Auto">
@@ -155,7 +155,11 @@
                                Text="Forget password"
                                FontSize="14"
                                FontAttributes="Bold"
-                               TextColor="{StaticResource TitleColor}" />
+                               TextColor="{StaticResource TitleColor}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnForget"/>
+                                </Label.GestureRecognizers>
+                            </Label>
                         </HorizontalStackLayout>
                     </Grid>
                     <Button

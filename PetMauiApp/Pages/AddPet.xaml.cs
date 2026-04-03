@@ -26,4 +26,8 @@ public partial class AddPet : ContentPage
 	{
 		await Navigation.PushAsync(new Dashboard());
 	}
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

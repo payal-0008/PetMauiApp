@@ -10,4 +10,8 @@ public partial class AddReview : ContentPage
 	{
 		Navigation.PushAsync(new NewReview());
 	}
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Dashboard());
+    }
 }

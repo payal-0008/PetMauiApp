@@ -6,4 +6,8 @@ public partial class PetMapPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Dashboard());
+    }
 }

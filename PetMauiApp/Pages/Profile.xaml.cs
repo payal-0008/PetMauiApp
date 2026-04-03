@@ -6,9 +6,9 @@ public partial class Profile : ContentPage
 	{
 		InitializeComponent();
 	}
-    private async void OnBackTapped(object sender, EventArgs e)
+    private async void OnBackClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new Dashboard());
     }
 
     private async void OnLogout(object sender, EventArgs e)

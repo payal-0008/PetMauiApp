@@ -6,9 +6,19 @@
              BackgroundColor="{StaticResource BtnTextColor}"
              Title="AddReview">
     <Grid RowDefinitions="Auto, *">
+       
         <Grid HeightRequest="60" BackgroundColor="{StaticResource PassColor}">
             <HorizontalStackLayout VerticalOptions="Center" Margin="20,0" Spacing="20">
-
+                <Image Source="back.png"
+                    HeightRequest="22"
+                    WidthRequest="22"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBackClicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
                 <Label Text="Reviews" TextColor="{StaticResource BtnTextColor}" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"/>
             </HorizontalStackLayout>
             <ImageButton Source="plus_icon.png" HorizontalOptions="End" Margin="0,0,5,0" WidthRequest="15" Padding="10"  Clicked="OnImageButtonClicked"/>

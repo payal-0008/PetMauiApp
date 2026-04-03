@@ -11,6 +11,10 @@ public partial class NewReview : ContentPage
     {
         // Add your logic to save the review here
         await DisplayAlert("Success", "Your review has been posted!", "OK");
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new Dashboard());
+    }
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new AddReview());
     }
 }

@@ -18,7 +18,18 @@
                        VerticalOptions="Start"/>
 
                 <Grid Grid.Row="0" HeightRequest="60" VerticalOptions="Start" BackgroundColor="{StaticResource PassColor}">
-                    <Label Text="Dr. Nambuvan" TextColor="{StaticResource BtnTextColor}" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" Margin="20,0,0,0"/>
+                    <Image Source="back.png"
+                       HeightRequest="22"
+                       WidthRequest="22"
+                       Margin="20,0,0,0"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBackClicked"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Dr. Nambuvan" TextColor="{StaticResource BtnTextColor}" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
                 </Grid>
 
                     <Frame Grid.Row="1" 

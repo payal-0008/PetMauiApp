@@ -7,9 +7,19 @@
              BackgroundColor="{StaticResource BtnTextColor}"
              Title="BookAppointment">
     <Grid RowDefinitions="Auto, *">
-
+       
         <Grid HeightRequest="100" BackgroundColor="{StaticResource PassColor}">
-
+            <Image Source="back.png"
+                 HeightRequest="22"
+                 WidthRequest="22"
+                 Margin="20"
+                 Aspect="AspectFit"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
             <Label Text="Dr. Nambuvan" 
                    TextColor="{StaticResource BtnTextColor}" 
                    FontSize="20" 

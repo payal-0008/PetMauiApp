@@ -8,18 +8,16 @@ public partial class PaymentPage : ContentPage
 	}
     private async void OnBackClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new CartPage());
     }
-
     private async void OnPayNowClicked(object sender, EventArgs e)
     {
-        // Simple validation check
         bool isConfirm = await DisplayAlert("Confirm Payment", "Do you want to proceed with this payment?", "Yes", "No");
 
         if (isConfirm)
         {
-            // Yahan par aap Success page par navigate kar sakte ho
             await DisplayAlert("Success", "Payment Successful!", "OK");
+            await Navigation.PopToRootAsync();
         }
     }
 }

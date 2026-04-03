@@ -6,4 +6,8 @@ public partial class ForgetPass : ContentPage
 	{
 		InitializeComponent();
 	}
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

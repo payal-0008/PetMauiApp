@@ -6,6 +6,16 @@
              BackgroundColor="{StaticResource BtnTextColor}"
              Title="ForgetPass">
     <VerticalStackLayout>
+        <Image Source="back.png"
+           HeightRequest="22"
+           WidthRequest="22"
+           Aspect="AspectFit"
+           HorizontalOptions="Start"
+           VerticalOptions="Center">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnBackClicked"/>
+            </Image.GestureRecognizers>
+        </Image>
         <Grid RowDefinitions="Auto,Auto,Auto,auto" Padding="20">
 
                 <Image Source="pet"

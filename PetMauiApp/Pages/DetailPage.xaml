@@ -5,7 +5,20 @@
              Shell.NavBarIsVisible="False"
              Title="DetailPage">
     <ScrollView>
+       
         <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="{StaticResource BtnTextColor}">
+            <Grid BackgroundColor="{StaticResource PassColor}"> 
+                <Image Source="back.png"
+               HeightRequest="22"
+               WidthRequest="22"
+               Aspect="AspectFit"
+               HorizontalOptions="Start"
+               VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+            </Grid>
             <Border StrokeShape="RoundRectangle 20" StrokeThickness="0" BackgroundColor="#F5F5F5" HeightRequest="300">
                 <Image Source="{Binding Image}" Aspect="AspectFit" Margin="20"/>
             </Border>

@@ -6,8 +6,19 @@
              BackgroundColor="{StaticResource BtnTextColor}"
              Title="RetailStore">
     <Grid RowDefinitions="Auto, *, Auto">
-
+      
         <Grid Grid.Row="0" BackgroundColor="{StaticResource PassColor}" HeightRequest="70" Padding="0,40,0,0">
+            <Image Source="back.png"
+                 HeightRequest="22"
+                 WidthRequest="22"
+                   Margin="10,0,0,50"
+                 Aspect="AspectFit"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
             <Label Grid.Column="0" Text="Find Retail Stores" TextColor="{StaticResource BtnTextColor}"  
                 HeightRequest="70" 
                 FontAttributes="Bold" 

@@ -6,8 +6,17 @@
              BackgroundColor="{StaticResource BtnTextColor}">
     <Grid RowDefinitions="Auto, *">
     <Grid Grid.Row="0" BackgroundColor="{StaticResource PassColor}" HeightRequest="60" Padding="15,0">
-        <ImageButton Source="back_white.png" HorizontalOptions="Start" HeightRequest="20" VerticalOptions="Center" Clicked="OnBackClicked"/>
-        <Label Text="Add Delivery Address" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontAttributes="Bold" FontSize="18"/>
+            <Image Source="back.png"
+                HeightRequest="22"
+                WidthRequest="22"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Add Delivery Address" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontAttributes="Bold" FontSize="18"/>
     </Grid>
 
     <ScrollView Grid.Row="1">

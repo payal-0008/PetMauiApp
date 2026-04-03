@@ -5,9 +5,18 @@
              Shell.NavBarIsVisible="False"
              Title="AddPet">
     <Grid RowDefinitions="60, *">
-
+        
         <Grid BackgroundColor="{StaticResource PassColor}" Padding="15,0">
-            <Label Text="←" TextColor="{StaticResource BtnTextColor}" FontSize="25" VerticalOptions="Center"/>
+            <Image Source="back.png"
+                HeightRequest="22"
+                WidthRequest="22"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
             <Label Text="Add Pets" TextColor="{StaticResource BtnTextColor}" FontSize="18" 
                    HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
         </Grid>

@@ -139,4 +139,8 @@ public partial class PetFood : ContentPage
     {
         await Navigation.PushAsync(new CartPage());
     }
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Dashboard());
+    }
 }

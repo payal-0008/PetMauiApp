@@ -9,6 +9,17 @@
         <BoxView BackgroundColor="{Binding BackColor}" CornerRadius="0,0,40,40"/>
 
         <VerticalStackLayout Grid.Row="0" VerticalOptions="Center" Spacing="10">
+            <Image Source="back.png"
+                HeightRequest="22"
+                WidthRequest="22"
+                Aspect="AspectFit"
+                Margin="20,0,0,0"
+                HorizontalOptions="Start"
+                VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
             <Image Source="{Binding Image}" HeightRequest="180" Aspect="AspectFit"/>
             <Label Text="{Binding Name}" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource BtnTextColor}"/>
         </VerticalStackLayout>

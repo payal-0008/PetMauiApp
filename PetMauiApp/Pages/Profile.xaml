@@ -10,9 +10,16 @@
 
         <Grid BackgroundColor="{StaticResource PassColor}" HeightRequest="60" Padding="15,0">
             <Grid ColumnDefinitions="Auto, *, Auto">
-                <ImageButton Source="back_white.png" HeightRequest="25" WidthRequest="25" 
-                             BackgroundColor="Transparent" Clicked="OnBackTapped" />
-
+                <Image Source="back.png"
+                    HeightRequest="22"
+                    WidthRequest="22"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBackClicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
                 <Label Text="Pixel Posse" Grid.Column="1" HorizontalOptions="Center" 
                        VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontSize="18" FontAttributes="Bold"/>
 

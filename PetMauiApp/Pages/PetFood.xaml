@@ -7,7 +7,16 @@
              Title="PetFood">
     <Grid RowDefinitions="60, *">
         <Grid BackgroundColor="{StaticResource PassColor}" Padding="15,0">
-          
+            <Image Source="back.png"
+               HeightRequest="22"
+               WidthRequest="22"
+               Aspect="AspectFit"
+               HorizontalOptions="Start"
+               VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
             <Label Text="Shop" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontAttributes="Bold" FontSize="18"/>
             <Image Source="cart_white.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25">
                 <Image.GestureRecognizers>

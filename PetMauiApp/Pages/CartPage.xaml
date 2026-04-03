@@ -6,7 +6,18 @@
              BackgroundColor="{StaticResource BtnTextColor}"
              Title="CartPage">
     <Grid RowDefinitions="60, *, Auto">
+       
         <Grid BackgroundColor="{StaticResource PassColor}" Padding="15,0">
+            <Image Source="back.png"
+                  HeightRequest="22"
+                  WidthRequest="22"
+                  Aspect="AspectFit"
+                  HorizontalOptions="Start"
+                  VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
             <Label Text="Cart" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}" FontAttributes="Bold" FontSize="18"/>
         </Grid>
 

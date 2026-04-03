@@ -95,4 +95,9 @@ public partial class Regiester : ContentPage
         await DisplayAlert("Success", "Registered Successfully", "OK");
         OnLoginTapped(null, null);
     }
+
+    private void OnForget(object sender, EventArgs e)
+    {
+         Navigation.PushAsync(new ForgetPass());
+    }
 }

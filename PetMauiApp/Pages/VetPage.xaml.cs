@@ -160,4 +160,8 @@ public partial class VetPage : ContentPage
             case "Boarding": BoardFrame.BackgroundColor = Color.FromArgb("#77AE99"); break;
         }
     }
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Dashboard());
+    }
 }

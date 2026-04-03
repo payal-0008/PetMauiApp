@@ -5,7 +5,23 @@
              Shell.NavBarIsVisible="False"
              Shell.BackgroundColor="{StaticResource BtnTextColor}"
              Title="ProductDetailPage">
-    <ScrollView>
+    <Grid RowDefinitions="Auto,*" BackgroundColor="{StaticResource BtnTextColor}">
+        <Grid Grid.Row="0"
+              BackgroundColor="{StaticResource PassColor}"
+              HeightRequest="50">
+            <Image Source="back.png"
+                   HeightRequest="22"
+                   WidthRequest="22"
+                   Margin="25,0,0,0"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        <ScrollView Grid.Row="1">
         <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="{StaticResource BtnTextColor}">
             <Image Source="{Binding Image}" HeightRequest="220" Aspect="AspectFit" Margin="0,20,0,0"/>
           
@@ -26,4 +42,5 @@
             <Button Text="Add to Cart" BackgroundColor="{StaticResource PassColor}" CornerRadius="25" HeightRequest="50" Margin="0,20" Clicked="Btn_plus"/>
         </VerticalStackLayout>
     </ScrollView>
+</Grid>
 </ContentPage>

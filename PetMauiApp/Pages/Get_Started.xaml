@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PetMauiApp.Pages.Get_Started"
              Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
              Shell.TabBarIsVisible="False"
              BackgroundColor="{StaticResource BgColor}"
              Title="Get_Started">

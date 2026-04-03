@@ -6,9 +6,18 @@
              Shell.BackgroundColor="{StaticResource BtnTextColor}"
              Title="AddDevice">
     <Grid RowDefinitions="Auto, Auto, *">
+       
         <Grid BackgroundColor="{StaticResource PassColor}" HeightRequest="60" Padding="15,0">
-            <Label Text="←" TextColor="{StaticResource BtnTextColor}" FontSize="25" VerticalOptions="Center">
-            </Label>
+            <Image Source="back.png"
+               HeightRequest="22"
+               WidthRequest="22"
+               Aspect="AspectFit"
+               HorizontalOptions="Start"
+               VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
             <Label Text="Add Device" TextColor="{StaticResource BtnTextColor}" FontSize="18" 
                    HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
         </Grid>

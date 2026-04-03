@@ -13,4 +13,8 @@ public partial class DetailPage : ContentPage
 	{
 		await Navigation.PushAsync(new CartPage());
 	}
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }
