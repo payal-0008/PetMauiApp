@@ -70,8 +70,8 @@
 
                     <Grid RowDefinitions="Auto,Auto"
                         ColumnDefinitions="30,*"
-                        Margin="50,0,50,0"
-                        Padding="20,10,20,0">
+                        Margin="5,0,5,0"
+                        Padding="10,10,10,0">
 
                         <Image
                            Source="email.png"
@@ -92,14 +92,15 @@
                                 Grid.Row="1"
                                 Grid.ColumnSpan="2"
                                 HeightRequest="1"
-                               Color="{StaticResource TitleColor}"/>
+                               Color="{StaticResource TitleColor}"
+                            Margin="0,-15,0,0"/>
 
                     </Grid>
 
                     <Grid RowDefinitions="Auto,Auto"
                             ColumnDefinitions="30,*"
-                            Margin="50,0,50,0"
-                            Padding="20,10,20,0">
+                             Margin="5,0,5,0"
+                             Padding="10,10,10,0">
 
                         <Image
                                 Source="padlock.png"
@@ -120,13 +121,14 @@
                             Grid.Row="1"
                             Grid.ColumnSpan="2"
                             HeightRequest="1"
-                            Color="{StaticResource TitleColor}"/>
+                            Color="{StaticResource TitleColor}"
+                            Margin="0,-15,0,0"/>
 
 
                     </Grid>
                     <Grid 
                        RowDefinitions="*,*"
-                       Padding="45,20,0,0"
+                       Padding="0,20,0,0"
                         >
 
                         <HorizontalStackLayout Spacing="6" Padding="45,0,0,0">
@@ -136,7 +138,7 @@
 
                             <Label
                                Text="Remember password"
-                               FontSize="14"
+                               FontSize="18"
                                FontAttributes="Bold"
                                TextColor="{StaticResource TitleColor}"/>
 
@@ -145,7 +147,7 @@
 
                     <Grid 
                         RowDefinitions="*,*" Padding="45,10,0,0">
-                        <HorizontalStackLayout Spacing="6" Padding="45,0,0,0">
+                        <HorizontalStackLayout Spacing="6" Padding="0,0,0,0">
 
                             <Image
                                Source="question.png"
@@ -153,7 +155,7 @@
 
                             <Label
                                Text="Forget password"
-                               FontSize="14"
+                               FontSize="18"
                                FontAttributes="Bold"
                                TextColor="{StaticResource TitleColor}">
                                 <Label.GestureRecognizers>
@@ -172,14 +174,14 @@
                         Clicked="LoginTapped"
                         Opacity="0.9"
                         HeightRequest="50"
-                        Margin="30"/>
+                       Margin="15,30,15,10"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout x:Name="RegisterLayout">
 
                     <Grid RowDefinitions="Auto,Auto"
                           ColumnDefinitions="30,*"
-                          Margin="50,0,50,0"
-                         Padding="20,10,20,0">
+                          Margin="5,0,5,0"
+                         Padding="10,10,10,0">
 
                         <Image
                            Source="fpic.png"
@@ -199,14 +201,15 @@
                              Grid.Row="1"
                              Grid.ColumnSpan="2"
                              HeightRequest="1"
-                             Color="{StaticResource TitleColor}"/>
+                             Color="{StaticResource TitleColor}"
+                            Margin="0,-15,0,0"/>
 
                     </Grid>
 
                     <Grid RowDefinitions="Auto,Auto"
                        ColumnDefinitions="30,*"
-                       Margin="50,0,50,0"
-                       Padding="20,10,20,0">
+                       Margin="5,0,5,0"
+                       Padding="10,10,10,0">
 
                         <Image
                             Source="email.png"
@@ -226,14 +229,15 @@
                              Grid.Row="1"
                              Grid.ColumnSpan="2"
                              HeightRequest="1"
-                             Color="{StaticResource TitleColor}"/>
+                             Color="{StaticResource TitleColor}"
+                            Margin="0,-15,0,0"/>
 
                     </Grid>
 
                     <Grid RowDefinitions="Auto,Auto"
                         ColumnDefinitions="30,*"
-                        Margin="50,0,50,0"
-                        Padding="20,10,20,0">
+                         Margin="5,0,5,0"
+                         Padding="10,10,10,0">
 
                         <Image
                            Source="padlock.png"
@@ -254,7 +258,8 @@
                            Grid.Row="1"
                            Grid.ColumnSpan="2"
                            HeightRequest="1"
-                           Color="{StaticResource TitleColor}"/>
+                           Color="{StaticResource TitleColor}"
+                            Margin="0,-15,0,0"/>
 
                     </Grid>
 
@@ -265,7 +270,7 @@
                          FontAttributes="Bold"
                          CornerRadius="10"
                          HeightRequest="50"
-                         Margin="30"
+                         Margin="15,30,15,10"
                         Clicked="Btn"/>
 
                 </VerticalStackLayout>
@@ -273,7 +278,7 @@
                 <Label
                  Text="or connect with"
                  HorizontalOptions="Center"
-                 FontSize="14"
+                 FontSize="17"
                  FontAttributes="Bold"
                  TextColor="{StaticResource TitleColor}"/>
 
@@ -281,10 +286,10 @@
                  HorizontalOptions="Center"
                  Spacing="20">
 
-                    <Image Source="fb.png" HeightRequest="30" />
-                    <Image Source="instagram.png" HeightRequest="30"/>
-                    <Image Source="pin.png" HeightRequest="30" />
-                    <Image Source="link.png" HeightRequest="30" />
+                    <Image Source="fb.png" HeightRequest="30" Margin="0,0,0,10"/>
+                    <Image Source="instagram.png" HeightRequest="30" Margin="0,0,0,10"/>
+                    <Image Source="pin.png" HeightRequest="30" Margin="0,0,0,10"/>
+                    <Image Source="link.png" HeightRequest="30" Margin="0,0,0,10"/>
 
                 </HorizontalStackLayout>
 

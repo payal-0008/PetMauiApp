@@ -13,15 +13,15 @@
                 HeightRequest="22"
                 WidthRequest="22"
                 Aspect="AspectFit"
-                Margin="20,0,0,0"
+                Margin="20,20,0,0"
                 HorizontalOptions="Start"
                 VerticalOptions="Center">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnBackClicked"/>
                 </Image.GestureRecognizers>
             </Image>
-            <Image Source="{Binding Image}" HeightRequest="180" Aspect="AspectFit"/>
-            <Label Text="{Binding Name}" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource BtnTextColor}"/>
+            <Image Source="{Binding Image}" HeightRequest="150" Aspect="AspectFit"/>
+            <Label Text="{Binding Name}" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource BtnTextColor}" Padding="20,0,0,20"/>
         </VerticalStackLayout>
 
         <ScrollView Grid.Row="1" Margin="0,-30,0,0">

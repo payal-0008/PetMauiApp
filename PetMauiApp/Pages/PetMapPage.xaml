@@ -33,8 +33,8 @@
 
             <VerticalStackLayout VerticalOptions="End" Margin="0,0,0,20">
                 <Grid >
-                    <Frame Margin="20,80,20,30" CornerRadius="25" HasShadow="True" Padding="20,20,20,40" 
-                           BackgroundColor="{StaticResource BtnTextColor}" Opacity="0.85">
+                    <Frame Margin="20,80,20,0" CornerRadius="25" HasShadow="True"
+                           BackgroundColor="{StaticResource BtnTextColor}" Opacity="0.89">
                         <VerticalStackLayout Spacing="10">
                             <Grid ColumnDefinitions="*,Auto">
                                 <Label Text="Bella - Border Collie" FontAttributes="Bold" FontSize="18"  TextColor="{StaticResource TextColor}"/>
@@ -46,14 +46,28 @@
                             <Label Text="📍 1.2 km away from you" FontSize="13" TextColor="{StaticResource TitleColor}" />
 
                             <Grid ColumnDefinitions="Auto,Auto,Auto,*,Auto" ColumnSpacing="8">
-                                <Border Grid.Column="0"  StrokeShape="RoundRectangle 10" HeightRequest="40" WidthRequest="40">
-                                    <Label Text="❤" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}"/>
+                                <Border Grid.Column="0" 
+                                 StrokeShape="RoundRectangle 10" 
+                                 HeightRequest="40" WidthRequest="40"
+                                 BackgroundColor="#CD5A52" 
+                                 StrokeThickness="0">
+                                    <Image Source="heart_paw.png" HeightRequest="25" WidthRequest="25" />
                                 </Border>
-                                <Border Grid.Column="1" StrokeShape="RoundRectangle 10" HeightRequest="40" WidthRequest="40">
-                                    <Label Text="🚗" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}"/>
+
+                                <Border Grid.Column="1" 
+                                   StrokeShape="RoundRectangle 10" 
+                                   HeightRequest="40" WidthRequest="40"
+                                   BackgroundColor="#77AD65" 
+                                   StrokeThickness="0">
+                                    <Image Source="green.png" HeightRequest="50" WidthRequest="25" Aspect="AspectFit"/>
                                 </Border>
-                                <Border Grid.Column="2"  StrokeShape="RoundRectangle 10" HeightRequest="40" WidthRequest="40">
-                                    <Label Text="🎮" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource BtnTextColor}"/>
+
+                                <Border Grid.Column="2" 
+                                     StrokeShape="RoundRectangle 10" 
+                                     HeightRequest="40" WidthRequest="40"
+                                     BackgroundColor="#CD5A52" 
+                                     StrokeThickness="0">
+                                    <Image Source="face.png" HeightRequest="50" WidthRequest="25" Aspect="AspectFill"/>
                                 </Border>
                                 <Button Grid.Column="4" Text="See More" BackgroundColor="{StaticResource PassColor}" TextColor="{StaticResource BtnTextColor}" CornerRadius="10" Padding="15,0" HeightRequest="40"/>
                             </Grid>

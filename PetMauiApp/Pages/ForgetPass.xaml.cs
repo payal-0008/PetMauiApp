@@ -8,6 +8,6 @@ public partial class ForgetPass : ContentPage
 	}
     private async void OnBackClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new Regiester());
     }
 }

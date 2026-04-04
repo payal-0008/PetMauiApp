@@ -31,7 +31,7 @@
                 <Border StrokeShape="RoundRectangle 12" StrokeThickness="0" BackgroundColor="{StaticResource EntryColor}" HeightRequest="50" Padding="15,0">
                     <Grid ColumnDefinitions="Auto, *">
                         <Label Text="🔍" VerticalOptions="Center" TextColor="{StaticResource TitleColor}"/>
-                        <Entry Grid.Column="1" Placeholder="Search keywords.." Margin="10,0" VerticalOptions="Center"/>
+                        <Entry Grid.Column="1" Placeholder="Search keywords.." Margin="10,0" VerticalOptions="Center" TextColor="{StaticResource TextColor}"/>
                     </Grid>
                 </Border>
                 <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
@@ -77,8 +77,8 @@
                 </HorizontalStackLayout>
 
                 <Grid ColumnDefinitions="*, Auto">
-                    <Label x:Name="RecommendedTitle" Text="Recommended Food" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
-                    <Button Grid.Column="1" Text="Check Retail Stores" BackgroundColor="{StaticResource PassColor}" FontSize="10" CornerRadius="15"
+                    <Label x:Name="RecommendedTitle" Text="Recommended Food" FontSize="23" FontAttributes="Bold" TextColor="{StaticResource TextColor}" VerticalTextAlignment="Center"/>
+                    <Button Grid.Column="1" Text="Check Retail Stores" BackgroundColor="{StaticResource PassColor}" FontSize="12" CornerRadius="15"
                             HeightRequest="20" Clicked="Retail_Store"/>
                 </Grid>
 
@@ -93,7 +93,7 @@
                                     <TapGestureRecognizer Tapped="OnProductSelected" CommandParameter="{Binding .}" />
                                 </Frame.GestureRecognizers>
                                 <VerticalStackLayout Spacing="5">
-                                    <Label Text="{Binding Tag}" BackgroundColor="{Binding TagColor}" TextColor="Brown" FontSize="10" HorizontalOptions="Start" Padding="8,2" TranslationY="-5"/>
+                                    <Label Text="{Binding Tag}" BackgroundColor="{Binding TagColor}" TextColor="Brown" FontSize="10" HorizontalOptions="Start" Padding="8,5,8,5"  VerticalTextAlignment="Center"/>
                                     <Image Source="{Binding Image}" HeightRequest="120" Aspect="AspectFit"/>
                                     <Label Text="{Binding Price}" TextColor="{StaticResource PassColor}" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="14"/>
                                     <Label Text="{Binding Name}" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="13" MaxLines="1" TextColor="{StaticResource TextColor}"/>
@@ -101,7 +101,7 @@
                                     <Button Text="Add to cart" ImageSource="right.png" BorderColor="{StaticResource EntryColor}" BorderWidth="1" 
                                             BackgroundColor="{StaticResource EntColor}" 
                                             TextColor="{StaticResource TextColor}" 
-                                            FontSize="10" HeightRequest="35" Clicked="btn_store"/>
+                                            FontSize="15" HeightRequest="35" Clicked="btn_store"/>
                                 </VerticalStackLayout>
                             </Frame>
                         </DataTemplate>

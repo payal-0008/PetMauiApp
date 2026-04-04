@@ -3,19 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PetMauiApp.Pages.ForgetPass"
              Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource BtnTextColor}"
              Title="ForgetPass">
     <VerticalStackLayout>
-        <Image Source="back.png"
+        <Grid BackgroundColor="{StaticResource PassColor}" HeightRequest="50">
+            <Image Source="back.png"
            HeightRequest="22"
            WidthRequest="22"
            Aspect="AspectFit"
+           Margin="25,0,0,0"
            HorizontalOptions="Start"
            VerticalOptions="Center">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnBackClicked"/>
             </Image.GestureRecognizers>
         </Image>
+        </Grid>
         <Grid RowDefinitions="Auto,Auto,Auto,auto" Padding="20">
 
                 <Image Source="pet"
@@ -38,24 +42,29 @@
 
            
             <Grid Grid.Row="2"
-                  RowDefinitions="Auto,Auto,auto,auto"
+                  RowDefinitions="Auto,Auto,auto,auto,auto"
                   Padding="25,20,25,0"
                   RowSpacing="0">
              
                 <Label Text="Enter you'r Email"
                        Grid.Row="0"
-                         TextColor="{StaticResource TextColor}"/>
+                       TextColor="{StaticResource TextColor}"/>
 
                 <Grid Grid.Row="1"
-                      ColumnDefinitions="*,Auto">
+                      ColumnDefinitions="*,Auto"
+                      RowDefinitions="*,*"   ColumnSpacing="10">
                   
                     <Entry Grid.Column="0"
                            Placeholder="Example@gmail.com"
                            FontSize="16"
-                           BackgroundColor="{StaticResource EntColor}"/>
+                            Margin="0"
+                           BackgroundColor="{StaticResource EntColor}"
+                           TextColor="{StaticResource TextColor}"
+                          />
+                    
 
-
-                    <Button Grid.Column="1"
+                        <Button Grid.Row="0"
+                        Grid.Column="1"
                             Text="Get OTP?"
                             FontSize="14"
                             TextColor="{StaticResource TextColor}"
@@ -63,6 +72,12 @@
                             BackgroundColor="{StaticResource PassColor}"
                             Padding="10,0,10,0"
                             VerticalOptions="Center"/>
+                    <BoxView
+                      Grid.Row="1"
+                      Grid.ColumnSpan="1"
+                      HeightRequest="1.5"
+                      Color="{StaticResource TitleColor}"
+                      Margin="0,-15,0,0"/>
 
                 </Grid>
 
@@ -78,8 +93,13 @@
                     Keyboard="Email"
                     FontSize="16"
                     BackgroundColor="{StaticResource EntColor}"
-                    />
-
+                    TextColor="{StaticResource TextColor}"/>
+                <BoxView
+                  Grid.Row="5"
+                  Grid.ColumnSpan="2"
+                  HeightRequest="1"
+                  Color="{StaticResource TitleColor}"
+                  Margin="0,-15,0,0"/>
 
             </Grid>
 

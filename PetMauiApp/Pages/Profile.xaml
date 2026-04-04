@@ -71,7 +71,7 @@
                             <Label Text="About me" Grid.Column="1" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
                             <Image Source="right_arrow.png" Grid.Column="2" HeightRequest="15"/>
                         </Grid>
-                        <BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>
+                        <!--<BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>-->
 
                         <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
                             <Grid.GestureRecognizers>
@@ -81,7 +81,7 @@
                             <Label Text="My Orders" Grid.Column="1" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
                             <Image Source="right_arrow.png" Grid.Column="2" HeightRequest="15"/>
                         </Grid>
-                        <BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>
+                        <!--<BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>-->
 
                         <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
                             <Grid.GestureRecognizers>
@@ -91,7 +91,7 @@
                             <Label Text="My Address" Grid.Column="1" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource TextColor}"/>
                             <Image Source="right_arrow.png" Grid.Column="2" HeightRequest="15"/>
                         </Grid>
-                        <BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>
+                        <!--<BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>-->
 
                         <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
                             <Image Source="paw.png" HeightRequest="20"/>
@@ -101,7 +101,7 @@
                                 <TapGestureRecognizer Tapped="add_pet"/>
                             </Grid.GestureRecognizers>
                         </Grid>
-                        <BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>
+                        <!--<BoxView HeightRequest="1" Color="{StaticResource TitleColor}" Margin="20,0,10,0" Opacity="0.1"/>-->
 
                         <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
                             <Image Source="iot_devices.png" HeightRequest="20"/>
