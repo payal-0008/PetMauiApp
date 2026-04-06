@@ -16,8 +16,11 @@
                 Padding="25,10,0,0"
                 VerticalOptions="Center"
                 TextColor="{StaticResource BtnTextColor}"/>
-                <Image Source="pet"  Grid.Column="1" WidthRequest="70"
-                      HeightRequest="70" Margin="0,12,10,0"/>
+                <Frame Grid.Column="1" HeightRequest="80" WidthRequest="80" CornerRadius="10" 
+                       Padding="0" IsClippedToBounds="True" HasShadow="False" BackgroundColor="{StaticResource PassColor}">
+                    <Image Source="pet_dog.png" Aspect="AspectFill" Margin="0,12,10,0"/>
+                </Frame>
+
             </Grid>
             <VerticalStackLayout Padding="10"  Grid.Row="1">
                 <Frame CornerRadius="20" Padding="0" HasShadow="True" BorderColor="{StaticResource BtnTextColor}">

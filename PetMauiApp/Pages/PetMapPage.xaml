@@ -34,7 +34,7 @@
             <VerticalStackLayout VerticalOptions="End" Margin="0,0,0,20">
                 <Grid >
                     <Frame Margin="20,80,20,0" CornerRadius="25" HasShadow="True"
-                           BackgroundColor="{StaticResource BtnTextColor}" Opacity="0.89">
+                           BackgroundColor="{StaticResource BtnTextColor}" Opacity="1">
                         <VerticalStackLayout Spacing="10">
                             <Grid ColumnDefinitions="*,Auto">
                                 <Label Text="Bella - Border Collie" FontAttributes="Bold" FontSize="18"  TextColor="{StaticResource TextColor}"/>

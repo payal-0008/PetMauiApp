@@ -60,7 +60,7 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <Frame CornerRadius="20" Margin="20,10,20,30" Padding="10" BackgroundColor="{StaticResource BtnTextColor}" HasShadow="True">
+                <Frame CornerRadius="20" Margin="20,8,20,30" BackgroundColor="{StaticResource BtnTextColor}" HasShadow="True">
                     <VerticalStackLayout>
 
                         <Grid ColumnDefinitions="40, *, 30" HeightRequest="50" Padding="10,0">
